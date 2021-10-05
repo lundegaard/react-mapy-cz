@@ -9,15 +9,16 @@
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
+    "build": "webpack",
     "prepare": "husky install",
     "lint": "eslint ./",
     "test": "jest --passWithNoTests",
     "prettier": "prettier --write \"**/*.{js,mdx,md,html,json}\""
   },
   "peerDependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "prop-types": ">=15.7.2",
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
   },
   "keywords": [
     "react",
@@ -32,6 +33,7 @@
     "@babel/eslint-parser": "7.15.0",
     "@babel/eslint-plugin": "7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
     "babel-preset-react-union": "^0.20.0",
     "cross-env": "^7.0.3",
     "eslint": "7.32.0",
@@ -45,6 +47,8 @@
     "husky": "^7.0.2",
     "jest": "^27.2.2",
     "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0"
   }
 }
