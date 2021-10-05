@@ -13,7 +13,7 @@ Amazing React wrapper of mapy.cz API
 </h3>
 
 <p align="center">
-A library of components for rendering maps. Goal of this library is to provide means to render flexible maps with multiple features allowing users to visualize what is needed.
+A library of components for rendering maps. Goal of this library is to provide means to render flexible maps with multiple features allowing users to visualize exactly what is needed.
 </p>
 
 <p align="center">
@@ -38,16 +38,12 @@ Or
 npm install react-mapy-cz
 ```
 
-## Documentation
-
-All available components with usage examples can be found in our [Storybook docs](https://lundium.netlify.app)
-
 ## Contribution
 
 We are open to any ideas and suggestions! Feel free to make PR!
 
 See
-[contribution guide](https://github.com/lundegaard/lundium/blob/master/CONTRIBUTING.md)
+[contribution guide](https://github.com/lundegaard/react-mapy-cz/blob/main/CONTRIBUTING.md)
 for guidelines. <br /> <br />
 
 ## See our related projects

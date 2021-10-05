@@ -1,6 +1,6 @@
 {
   "name": "react-mapy-cz",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Mapy.cz API React wrapper",
   "contributors": [
@@ -10,10 +10,11 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint --ignore-path .gitignore ./",
     "prepare": "husky install",
-    "lint": "eslint ./",
-    "test": "jest --passWithNoTests",
-    "prettier": "prettier --write \"**/*.{js,mdx,md,html,json}\""
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,mdx,md,html,json}\"",
+    "release": "standard-version",
+    "test": "jest --passWithNoTests"
   },
   "peerDependencies": {
     "prop-types": ">=15.7.2",
@@ -33,6 +34,8 @@
     "@babel/eslint-parser": "7.15.0",
     "@babel/eslint-plugin": "7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
     "babel-loader": "^8.2.2",
     "babel-preset-react-union": "^0.20.0",
     "cross-env": "^7.0.3",
@@ -48,6 +51,7 @@
     "jest": "^27.2.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
+    "standard-version": "^9.3.1",
     "webpack": "^5.55.1",
     "webpack-cli": "^4.8.0"
   }
