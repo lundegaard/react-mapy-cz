@@ -56,4 +56,9 @@ for guidelines. <br /> <br />
   done right.
 - [lundium](https://github.com/lundegaard/lundium) - Beautiful React component library.
 
+## Licence
+
+This library is published under MIT licence, but it uses Mapy.cz API.<br>
+By using this library, you agree with Mapy.cz [Terms and conditions](http://api.mapy.cz/#pact)
+
 © 2021 Lundegaard a.s.
