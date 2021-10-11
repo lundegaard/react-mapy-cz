@@ -7,5 +7,6 @@ module.exports = {
 			'error',
 			{ ignore: Object.keys(peerDependencies) },
 		],
+		'no-console': 'error',
 	},
 };

@@ -50,6 +50,10 @@ module.exports = Object.values(targets).map((target) => ({
 					loader: 'babel-loader',
 				},
 			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
 		],
 	},
 }));

@@ -7,10 +7,7 @@ const Map = ({ children, width = '100%', height = '300px' }) => {
 	const { map, id } = useContext(MapContext);
 
 	return (
-		<div
-			style={{ width, height, img: { maxWidth: 'initial !important' } }}
-			id={id}
-		>
+		<div style={{ width, height }} id={id}>
 			{map && children}
 		</div>
 	);
