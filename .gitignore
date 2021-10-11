@@ -432,3 +432,11 @@ $RECYCLE.BIN/
 # Custom
 es
 lib
+
+# Docusaurus
+# Production
+website/build/
+
+# Generated files
+website/.docusaurus/
+website/.cache-loader/

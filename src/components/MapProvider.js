@@ -5,17 +5,19 @@ import { BaseLayers } from '../utils/constants';
 import { coordsShape } from '../utils/shapes';
 import mapScriptLoader from '../hoc/mapScriptLoader';
 import setMapCenter from '../utils/setMapCenter';
+// TODO: Make sure it is used in resulting library
+import '../css/map-provider.css';
 
 export const MapContext = createContext(null);
 
 const MapProvider = ({
-	center,
+	center = {},
 	children,
-	id = '',
+	id = 'react-mapy-cz',
 	mapLayers = [BaseLayers.BASE_NEW],
 	maxZoom = 18,
 	minZoom = 1,
-	zoom,
+	zoom = 5,
 }) => {
 	const [map, setMap] = useState(null);
 

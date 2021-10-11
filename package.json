@@ -8,6 +8,8 @@
   ],
   "license": "MIT",
   "main": "src/index.js",
+  "unpkg": "dist/react-maps-cz.umd.js",
+  "module": "es/react-maps-cz.module.js",
   "scripts": {
     "build": "webpack",
     "lint": "eslint --ignore-path .gitignore ./",
@@ -16,6 +18,9 @@
     "release": "standard-version",
     "test": "jest --passWithNoTests"
   },
+  "workspaces": [
+    "website"
+  ],
   "peerDependencies": {
     "prop-types": ">=15.7.2",
     "react": ">=16.13.1",
@@ -33,25 +38,27 @@
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "7.15.0",
     "@babel/eslint-plugin": "7.14.5",
+    "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
     "babel-loader": "^8.2.2",
-    "babel-preset-react-union": "^0.20.0",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.3.0",
     "eslint": "7.32.0",
     "eslint-config-lundegaard": "^0.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-jest-formatting": "^3.0.0",
-    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "^7.0.2",
     "jest": "^27.2.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
     "standard-version": "^9.3.1",
+    "style-loader": "^3.3.0",
     "webpack": "^5.55.1",
     "webpack-cli": "^4.8.0"
   }
