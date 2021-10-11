@@ -30,7 +30,7 @@ import { MapProvider, Map } from 'react-mapy-cz';
 
 <MapProvider center={{ lat: 50, lng: 15 }}>
 	<Map />
-</MapProvider>;
+</MapProvider>
 ```
 
 And done! Now you should be successfully running a static mapy.cz map in our app.
