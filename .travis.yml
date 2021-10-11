@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+  - 16
+
+cache:
+  yarn: true
+
+jobs:
+  include:
+    - stage: test
+      if: type = pull_request
+      script:
+        - yarn lint
+        - yarn test
+
+    - stage: release
+      if: tag IS present
+      deploy:
+        provider: npm
+        email: ${NPM_EMAIL}
+        api_key: ${NPM_API_KEY}
+        skip_cleanup: true
+        on:
+          tags: true
+
+    - stage: deploy
+      if: tag IS present
+      deploy:
+        provider: script
+        script: cd website &&
+          echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc &&
+          yarn && GIT_USER="${GH_NAME}" yarn deploy
+        on:
+          tags: true

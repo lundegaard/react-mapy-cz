@@ -1,0 +1,12 @@
+/.github
+/.husky
+/src
+/website
+.babelrc
+.editorconfig
+.eslintrc.js
+.gigignore
+.lintstagedrc
+.prettierrc
+webpack.config.js
+commitlint.config.js
