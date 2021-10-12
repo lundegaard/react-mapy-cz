@@ -14,7 +14,7 @@ const outputPathsByTarget = {
 	[targets.module]: 'es',
 };
 
-const libraryTargetsByTarget = {
+const targetsByTarget = {
 	[targets.commonjs]: 'commonjs2',
 	[targets.umd]: 'umd',
 	[targets.module]: 'module',
@@ -39,7 +39,7 @@ module.exports = Object.values(targets).map((target) => ({
 		'prop-types': 'prop-types',
 	},
 	experiments: {
-		outputModule: libraryTargetsByTarget[target] === 'module',
+		outputModule: targetsByTarget[target] === 'module',
 	},
 	module: {
 		rules: [
