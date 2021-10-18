@@ -3,7 +3,7 @@ id: 10-interactive-map-with-route
 ---
 
 import { KeyboardControl,Map,
-MapProvider,MouseControl,Route, RouteGeometry, ZoomControl} from '../../../src';
+MapProvider,MouseControl,Route, RouteGeometry, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
 # Interactive map with route

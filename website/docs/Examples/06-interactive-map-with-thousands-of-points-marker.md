@@ -3,7 +3,7 @@ id: 06-interactive-map-with-thousands-of-points-marker
 ---
 
 import { Clusterer, KeyboardControl,Map,
-MapProvider, Marker, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} from '../../../src';
+MapProvider, Marker, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 import { generatePoints } from '../../utils';
 
@@ -18,7 +18,9 @@ Interactive map with controls and thousands of markers implemented with Marker c
 				<ZoomControl />
 				<KeyboardControl />
 				<MouseControl zoom pan wheel />
-				{generatePoints(3000).map((point, index) => <MarkerLayer key={index} ><Marker coords={point} />	</MarkerLayer>)}
+				<MarkerLayer>
+				{generatePoints(3000).map((point, index) => <Marker key={index} coords={point} />)}
+				</MarkerLayer>
     	</Map>
     </MapProvider>
 
@@ -31,13 +33,13 @@ Interactive map with controls and thousands of markers implemented with Marker c
 
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}} >
-			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-				{generatePoints(3000).map((point, index) => <MarkerLayer key={index} ><Marker coords={point} />	</MarkerLayer>)}
-    	</Map>
-    </MapProvider>
+	<Map>
+		<ZoomControl />
+		<KeyboardControl />
+		<MouseControl zoom pan wheel />
+		{generatePoints(3000).map((point, index) => <MarkerLayer key={index} ><Marker coords={point} />	</MarkerLayer>)}
+	</Map>
+</MapProvider>
 ```
 
 **Pitfalls**

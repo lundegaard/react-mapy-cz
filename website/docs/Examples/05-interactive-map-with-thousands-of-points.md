@@ -3,7 +3,7 @@ id: 05-interactive-map-with-thousands-of-points
 ---
 
 import { KeyboardControl,Map,
-MapProvider, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} from '../../../src';
+MapProvider, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 import { generatePoints } from '../../utils';
 
@@ -36,19 +36,19 @@ Interactive map with controls and thousands of markers implemented with Multiple
 **Code**
 
 ```
-		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
-			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-				<MarkerLayer>
-					<MultipleMarkers markersData={generatePoints(3000, true).map((point) => ({
-					coords: point.gps,
-					tooltip: point.name,
-					...point,
-					}))}
-					/>
-				</MarkerLayer>
-			</Map>
-		</MapProvider>
+<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
+	<Map>
+		<ZoomControl />
+		<KeyboardControl />
+		<MouseControl zoom pan wheel />
+		<MarkerLayer>
+			<MultipleMarkers markersData={generatePoints(3000, true).map((point) => ({
+			coords: point.gps,
+			tooltip: point.name,
+			...point,
+			}))}
+			/>
+		</MarkerLayer>
+	</Map>
+</MapProvider>
 ```
