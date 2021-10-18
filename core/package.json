@@ -1,0 +1,16 @@
+{
+  "name": "react-mapy-cz",
+  "version": "0.0.1",
+  "sideEffects": [
+    "./src/hoc/mapScriptLoader.js"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "peerDependencies": {
+    "prop-types": ">=15.7.2",
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
+  }
+}

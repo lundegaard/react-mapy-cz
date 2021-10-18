@@ -7,7 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import HomepageFeatures from '../components/HomepageFeatures';
 import byLundegaard from '../../static/by-lundegaard.png';
-import { Map, MapProvider, MouseControl } from '../../../src';
+import { Map, MapProvider, MarkerLayer, MouseControl } from '../../../core/src';
 
 import styles from './index.module.css';
 
@@ -27,11 +27,15 @@ export default function Home() {
 					</p>
 				</div>
 			</header>
-			{/* TODO: This style should not be necessary. Fix in library */}
-			<section className={styles.sMap}>
-				<MapProvider center={{ lat: 50, lng: 14 }}>
-					<Map>
+			<section>
+				<MapProvider
+					center={{ lat: 50, lng: 14 }}
+					id="homepage-map-static-example"
+					zoom={5}
+				>
+					<Map height="300px">
 						<MouseControl />
+						<MarkerLayer />
 					</Map>
 				</MapProvider>
 			</section>

@@ -3,7 +3,7 @@ id: 09-interactive-map-with-pointer
 ---
 
 import { KeyboardControl,Map,
-MapProvider,MouseControl, PointerControl, PointerTypes, ZoomControl} from '../../../src';
+MapProvider,MouseControl, PointerControl, PointerTypes, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
 # Interactive map with pointer
