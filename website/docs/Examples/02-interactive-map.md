@@ -3,7 +3,7 @@ id: 02-interactive-map
 ---
 
 import { KeyboardControl,Map,
-MapProvider,MouseControl, ZoomControl} from '../../../src';
+MapProvider,MouseControl, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
 # Interactive map
@@ -27,13 +27,13 @@ Interactive map with zoom, keyboard and mouse control. Move the map by dragging 
 **Code**
 
 ```
-		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
-			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-			</Map>
-		</MapProvider>
+<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
+	<Map>
+		<ZoomControl />
+		<KeyboardControl />
+		<MouseControl zoom pan wheel />
+	</Map>
+</MapProvider>
 ```
 
 ```

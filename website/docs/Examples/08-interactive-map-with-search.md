@@ -2,7 +2,7 @@
 id: 08-interactive-map-with-search
 ---
 
-import {KeyboardControl, LayerControl, Map, MapProvider, MouseControl, SearchInput, ZoomControl} from '../../../src';
+import {KeyboardControl, LayerControl, Map, MapProvider, MouseControl, SearchInput, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 import {handleSuggestItemSelect} from "../../utils";
 

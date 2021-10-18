@@ -1,0 +1,47 @@
+export const BaseLayers = {
+	BASE: 1,
+	TURIST: 2,
+	OPHOTO: 3,
+	HYBRID: 4,
+	HISTORIC: 5,
+	BIKE: 6,
+	TRAIL: 7,
+	OPHOTO0203: 8,
+	OPHOTO0406: 9,
+	OBLIQUE: 12,
+	SMART_BASE: 14,
+	SMART_OPHOTO: 15,
+	SMART_TURIST: 16,
+	RELIEF: 17,
+	TURIST_WINTER: 19,
+	SMART_WINTER: 20,
+	SUMMER: 21,
+	SMART_SUMMER: 22,
+	GEOGRAPHY: 23,
+	OPHOTO1012: 24,
+	HYBRID_SPARSE: 25,
+	OPHOTO1415: 26,
+	BASE_NEW: 27,
+	TURIST_NEW: 28,
+};
+
+export const RouteTypes = {
+	FAST: 'fast',
+	SHORT: 'short',
+	BIKE1: 'bike1',
+	BIKE2: 'bike2',
+	BIKE3: 'bike3',
+	TURIST1: 'turist1',
+	TURIST2: 'turist2',
+};
+
+export const DEFAULT_ROUTE_COLOR = '#f00';
+export const DEFAULT_ROUTE_WIDTH = 3;
+
+export const SMapLayerTypes = {
+	CANVAS: 'CANVAS',
+	GEOMETRY: 'GEOMETRY',
+	HUD: 'HUD',
+	IMAGE: 'IMAGE',
+	MARKER: 'MARKER',
+};
