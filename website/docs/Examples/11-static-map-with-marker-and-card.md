@@ -5,7 +5,7 @@ id: 11-static-map-with-marker-and-card
 import {MapProvider, Map, Marker, MarkerLayer} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
-# Static map with marker and card
+# Marker with card
 
 Static map with marker and card. Header and body text can be set individually. It is possible to use html elements inside strings, e.g. `"<strong>Title</strong>"`.
 

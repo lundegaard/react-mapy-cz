@@ -40,12 +40,12 @@ const MyApp = () => (
 
 ## Making map interactive with Controls
 
-Sorry, we are still writing this section, check again in some time.
+:construction: Sorry, we are still writing this section, check again in some time.
 
 ## Adding points to map - Markers
 
-Sorry, we are still writing this section, check again in some time
+:construction: Sorry, we are still writing this section, check again in some time
 
 ## How to listen to events on map
 
-Sorry, we are still writing this section, check again in some time
+:construction: Sorry, we are still writing this section, check again in some time

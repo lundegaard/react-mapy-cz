@@ -4,7 +4,6 @@ import { markerShape } from '../utils/shapes';
 import createMarker from '../utils/createMarker';
 
 import { useMarkerLayer } from './MarkerLayer';
-import '../css/marker.css';
 
 const Marker = (props) => {
 	const markerLayer = useMarkerLayer();

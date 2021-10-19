@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
 import { node, string } from 'prop-types';
 
+import styles from '../css/base.module.css';
+
 import { useMap } from './MapContext';
-import styles from './base.module.css';
 
 const Map = ({ children, width = '100%', height = 'auto' }) => {
 	const { map, id } = useMap();

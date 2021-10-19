@@ -6,7 +6,7 @@ import { Clusterer, KeyboardControl,Map,
 MapProvider, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
-# Interactive map with multiple markers
+# Clustered markers
 
 Interactive map with controls and multiple markers with marker clustering. Markers of close proximity are combined into clusters.
 

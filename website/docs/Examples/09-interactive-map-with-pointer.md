@@ -3,10 +3,10 @@ id: 09-interactive-map-with-pointer
 ---
 
 import { KeyboardControl,Map,
-MapProvider,MouseControl, PointerControl, PointerTypes, ZoomControl} from '../../../core/src';
+MapProvider,MouseControl, Pointer, PointerTypes, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
-# Interactive map with pointer
+# Pointer
 
 Interactive map with controls and pointer. The pointer shows the direction of the specified location if it is out of the map view.
 
@@ -14,7 +14,7 @@ Interactive map with controls and pointer. The pointer shows the direction of th
   <section className={styles.sMap}>
 		<MapProvider center={{lng:  14.4347124, lat: 50.0891652}} zoom={16}>
 			<Map>
-				<PointerControl coords={{longitude: 14.4608576, latitude: 50.0963478}} />
+				<Pointer coords={{lng: 14.4608576, lat: 50.0963478}} />
 				<ZoomControl />
 				<KeyboardControl />
 				<MouseControl zoom pan wheel />
@@ -30,7 +30,7 @@ Interactive map with controls and pointer. The pointer shows the direction of th
 ```
 <MapProvider center={{lng:  14.4347124, lat: 50.0891652}} zoom={16}>
 	<Map>
-		<PointerControl coords={{longitude: 14.4608576, latitude: 50.0963478}} />
+		<Pointer coords={{lng: 14.4608576, lat: 50.0963478}} />
 		<ZoomControl />
 		<KeyboardControl />
 		<MouseControl zoom pan wheel />
