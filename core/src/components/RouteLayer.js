@@ -5,7 +5,7 @@ import { useMap } from './MapContext';
 
 export const RouteContext = createContext(null);
 
-const Route = ({ children }) => {
+const RouteLayer = ({ children }) => {
 	const { map } = useMap();
 	const pathLayer = new window.SMap.Layer.Geometry();
 
@@ -21,8 +21,8 @@ const Route = ({ children }) => {
 	);
 };
 
-Route.propTypes = {
+RouteLayer.propTypes = {
 	children: node,
 };
 
-export default Route;
+export default RouteLayer;

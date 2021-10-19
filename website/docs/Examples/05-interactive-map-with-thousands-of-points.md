@@ -7,9 +7,9 @@ MapProvider, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} from '../.
 import styles from '../../src/pages/index.module.css';
 import { generatePoints } from '../../utils';
 
-# Interactive map with thousands of points (MultipleMarkers)
+# Rendering thousands of points (MultipleMarkers)
 
-Interactive map with controls and thousands of markers implemented with MultipleMarkers component.
+Interactive map with controls and 10 000 markers implemented with MultipleMarkers component.
 
 <div>
   <section className={styles.sMap}>
@@ -19,11 +19,11 @@ Interactive map with controls and thousands of markers implemented with Multiple
 				<KeyboardControl />
 				<MouseControl zoom pan wheel />
 				<MarkerLayer>
-					<MultipleMarkers markersData={generatePoints(3000, true).map((point) => ({
-					coords: point.gps,
-					tooltip: point.name,
-					...point,
-					}))}
+					<MultipleMarkers markersData={generatePoints(10000, true).map((point) => ({
+							coords: point.gps,
+							tooltip: point.name,
+							...point,
+						}))}
 					/>
 				</MarkerLayer>
 			</Map>
@@ -42,11 +42,11 @@ Interactive map with controls and thousands of markers implemented with Multiple
 		<KeyboardControl />
 		<MouseControl zoom pan wheel />
 		<MarkerLayer>
-			<MultipleMarkers markersData={generatePoints(3000, true).map((point) => ({
-			coords: point.gps,
-			tooltip: point.name,
-			...point,
-			}))}
+			<MultipleMarkers markersData={generatePoints(10000, true).map((point) => ({
+					coords: point.gps,
+					tooltip: point.name,
+					...point,
+				}))}
 			/>
 		</MarkerLayer>
 	</Map>

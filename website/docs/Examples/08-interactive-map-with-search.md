@@ -6,16 +6,14 @@ import {KeyboardControl, LayerControl, Map, MapProvider, MouseControl, SearchInp
 import styles from '../../src/pages/index.module.css';
 import {handleSuggestItemSelect} from "../../utils";
 
-# Interactive map with search
+# Map with search
 
 Interactive map with controls and search input. The search input shows suggestions and on suggestion click centers the map on selected point.
 
 <div>
   <section className={styles.sMap}>
     <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	>
-			<SearchInput placeholder="Search"
-    				disableGeolocation
-    			 />
+			<SearchInput placeholder="Search" disableGeolocation />
     	<Map>
 				<ZoomControl />
 				<KeyboardControl />
@@ -30,14 +28,12 @@ Interactive map with controls and search input. The search input shows suggestio
 **Code**
 
 ```
-  <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	>
-			<SearchInput placeholder="Search"
-    			disableGeolocation
-    			 />
-    	<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-    	</Map>
-    </MapProvider>
+<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	>
+	<SearchInput placeholder="Search" disableGeolocation />
+	<Map>
+		<ZoomControl />
+		<KeyboardControl />
+		<MouseControl zoom pan wheel />
+	</Map>
+</MapProvider>
 ```

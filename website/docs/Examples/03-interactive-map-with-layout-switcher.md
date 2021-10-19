@@ -5,7 +5,7 @@ id: 03-interactive-map-with-layout-switcher
 import { BaseLayers, KeyboardControl, LayerControl, Map, MapProvider, MouseControl, ZoomControl} from '../../../core/src';
 import styles from '../../src/pages/index.module.css';
 
-# Interactive map with map layout switcher
+# Map layout switcher
 
 Interactive map with controls and layout switcher.
 
