@@ -8,7 +8,7 @@ import {
 	RouteTypes,
 } from '../utils/constants';
 
-import { RouteContext } from './Route';
+import { RouteContext } from './RouteLayer';
 
 const RouteGeometry = ({
 	color = DEFAULT_ROUTE_COLOR,

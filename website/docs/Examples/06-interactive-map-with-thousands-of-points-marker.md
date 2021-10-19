@@ -7,9 +7,12 @@ MapProvider, Marker, MarkerLayer, MouseControl, MultipleMarkers, ZoomControl} fr
 import styles from '../../src/pages/index.module.css';
 import { generatePoints } from '../../utils';
 
-# Interactive map with thousands of points (Marker)
+# Rendering thousands of points with Marker - do not do this
 
-Interactive map with controls and thousands of markers implemented with Marker component.
+Interactive map with controls and thousands of markers implemented with Marker component. This example serves as a common pitfall when working wit a large quantity of points.
+In this example we are rendering only 2 000 points and already you can see the poor performance.
+
+Implementation with single Marker component using loop causes extremely slow map render. For best performance use [MultipleMarkers](/docs/API/multiple-markers), or take a look at previous example [Rendering thousands of points](/docs/Examples/05-interactive-map-with-thousands-of-points)
 
 <div>
   <section className={styles.sMap}>
@@ -19,7 +22,7 @@ Interactive map with controls and thousands of markers implemented with Marker c
 				<KeyboardControl />
 				<MouseControl zoom pan wheel />
 				<MarkerLayer>
-				{generatePoints(3000).map((point, index) => <Marker key={index} coords={point} />)}
+				{generatePoints(2000).map((point, index) => <Marker key={index} coords={point} />)}
 				</MarkerLayer>
     	</Map>
     </MapProvider>
@@ -37,7 +40,7 @@ Interactive map with controls and thousands of markers implemented with Marker c
 		<ZoomControl />
 		<KeyboardControl />
 		<MouseControl zoom pan wheel />
-		{generatePoints(3000).map((point, index) => <MarkerLayer key={index} ><Marker coords={point} />	</MarkerLayer>)}
+		{generatePoints(2000).map((point, index) => <MarkerLayer key={index} ><Marker coords={point} />	</MarkerLayer>)}
 	</Map>
 </MapProvider>
 ```

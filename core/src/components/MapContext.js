@@ -45,7 +45,7 @@ const MapProvider = ({
 MapProvider.propTypes = {
 	center: shape(coordsShape).isRequired,
 	children: node,
-	id: string.isRequired,
+	id: string,
 	mapLayers: arrayOf([oneOf(Object.keys(BaseLayers))]),
 	maxZoom: number,
 	minZoom: number,

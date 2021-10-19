@@ -7,7 +7,7 @@ MapProvider, Marker, MarkerLayer, MouseControl, MultipleMarkers, Signals, ZoomCo
 import styles from '../../src/pages/index.module.css';
 import { generatePoints, onClusterClick, onMarkerClick } from '../../utils';
 
-# Interactive map with clustered points and signals
+# Clustered points and signals
 
 Interactive map with controls, marker clustering and signals. You can listen to signals and add your own action to the marker or cluster click.
 
