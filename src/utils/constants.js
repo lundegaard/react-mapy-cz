@@ -24,3 +24,16 @@ export const BaseLayers = {
 	BASE_NEW: 27,
 	TURIST_NEW: 28,
 };
+
+export const RouteTypes = {
+	FAST: 'fast',
+	SHORT: 'short',
+	BIKE1: 'bike1',
+	BIKE2: 'bike2',
+	BIKE3: 'bike3',
+	TURIST1: 'turist1',
+	TURIST2: 'turist2',
+};
+
+export const DEFAULT_ROUTE_COLOR = '#f00';
+export const DEFAULT_ROUTE_WIDTH = 3;
