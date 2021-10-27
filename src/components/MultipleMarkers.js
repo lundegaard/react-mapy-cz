@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 import { arrayOf, shape } from 'prop-types';
 
 import { markerShape } from '../utils/shapes';
+import createMarker from '../utils/createMarker';
 
 import { MarkerLayerContext } from './MarkerLayer';
 
@@ -21,24 +22,8 @@ const MultipleMarkers = ({ markersData }) => {
 	useEffect(() => {
 		markerLayer?.removeAll();
 
-		const markersArray = markersData.map(
-			({ coords, imgSrc, tooltip, ...props }) => {
-				const options = {
-					...(imgSrc ? { url: imgSrc } : undefined),
-					...(tooltip ? { title: tooltip } : undefined),
-					...props,
-				};
-				const mapCoords = window.SMap.Coords.fromWGS84(
-					coords.longitude,
-					coords.latitude
-				);
-
-				return new window.SMap.Marker(
-					mapCoords,
-					false,
-					Object.keys(options).length > 0 ? options : undefined
-				);
-			}
+		const markersArray = markersData.map((markerData) =>
+			createMarker(markerData)
 		);
 
 		markerLayer?.addMarker(markersArray);

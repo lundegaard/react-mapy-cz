@@ -1,5 +1,5 @@
 ---
-id: 07-interactive-map-clusters-signals
+id: 07-interactive-map-with-clusters-and-signals
 ---
 
 import { Clusterer, KeyboardControl,Map,
