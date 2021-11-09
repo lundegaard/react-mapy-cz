@@ -11,6 +11,7 @@ const PointerControl = ({ redPointer, coords: { longitude, latitude } }) => {
 			type: redPointer
 				? window.SMap.Control.Pointer.TYPES.RED
 				: window.SMap.Control.Pointer.TYPES.BLUE,
+			snapHUDtoScreen: 20,
 		});
 		map.addControl(pointerControl);
 

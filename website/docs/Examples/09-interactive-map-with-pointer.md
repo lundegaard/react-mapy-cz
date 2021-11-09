@@ -1,5 +1,5 @@
 ---
-id: 09-interactive-map-pointer
+id: 09-interactive-map-with-pointer
 ---
 
 import { KeyboardControl,Map,
@@ -12,7 +12,7 @@ Interactive map with controls and pointer. The pointer shows the direction of th
 
 <div>
   <section className={styles.sMap}>
-		<MapProvider center={{lng:  14.4347124, lat: 50.0891652}}  zoom={16}>
+		<MapProvider center={{lng:  14.4347124, lat: 50.0891652}} zoom={16}>
 			<Map>
 				<PointerControl coords={{longitude: 14.4608576, latitude: 50.0963478}} />
 				<ZoomControl />
