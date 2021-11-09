@@ -1,4 +1,4 @@
-import { number, oneOfType, shape, string } from 'prop-types';
+import { bool, number, oneOfType, shape, string } from 'prop-types';
 
 export const coordsShape = {
 	lng: oneOfType([number, string]),
@@ -6,7 +6,10 @@ export const coordsShape = {
 };
 
 export const markerShape = {
+	cardBodyText: string,
+	cardHeaderText: string,
 	coords: shape({ lng: number, lat: number }).isRequired,
+	enableCard: bool,
 	imgSrc: string,
 	tooltip: string,
 };

@@ -1,5 +1,5 @@
 ---
-id: 05-interactive-map-thousands-points-multiple-markers
+id: 05-interactive-map-with-thousands-of-points
 ---
 
 import { KeyboardControl,Map,

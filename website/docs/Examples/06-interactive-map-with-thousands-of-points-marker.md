@@ -1,5 +1,5 @@
 ---
-id: 06-interactive-map-thousands-points-marker
+id: 06-interactive-map-with-thousands-of-points-marker
 ---
 
 import { Clusterer, KeyboardControl,Map,
