@@ -24,4 +24,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           cd website
-          yarn && GIT_USER="${GH_NAME}" yarn deploy
+          yarn && yarn deploy
+        env:
+          GIT_USER: $RUNNER_NAME
