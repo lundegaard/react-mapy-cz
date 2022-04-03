@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useRef } from 'react';
 import { node } from 'prop-types';
 
 import { getContextHook } from '../utils/getContextHook';
-import { SMapLayerTypes } from '../utils/constants';
+import { SMAP_LAYER_TYPES } from '../utils/constants';
 
 import { useMap } from './MapContext';
 
@@ -20,7 +20,7 @@ const MarkerLayer = ({ children }) => {
 
 		map?.addLayer(markerLayer);
 		markerLayer.enable();
-		registerActiveLayer(markerLayer, SMapLayerTypes.MARKER);
+		registerActiveLayer(markerLayer, SMAP_LAYER_TYPES.MARKER);
 
 		return () => {
 			map.removeLayer(markerLayerRef.current);

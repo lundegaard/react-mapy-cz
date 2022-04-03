@@ -26,7 +26,7 @@ A library of components for rendering maps. Goal of this library is to provide m
 
 ## Getting started
 
-Setup your own project and add `react-mapy-cz` as your dependency:
+Installation `react-mapy-cz` lib as your dependency:
 
 ```bash
 yarn add react-mapy-cz
@@ -38,9 +38,11 @@ Or
 npm install react-mapy-cz
 ```
 
+And look at our [Docs](https://lundegaard.github.io/react-mapy-cz/), right to [Getting started](https://lundegaard.github.io/react-mapy-cz/docs/getting-started), or check our [examples](https://lundegaard.github.io/react-mapy-cz/docs/Examples/01-static-map-with-one-marker) for most common use cases.
+
 ## Contribution
 
-We are open to any ideas and suggestions! Feel free to make PR!
+We are open to ideas and suggestions! Feel free to make PR!
 
 See
 [contribution guide](https://github.com/lundegaard/react-mapy-cz/blob/main/CONTRIBUTING.md)
@@ -48,17 +50,17 @@ for guidelines. <br /> <br />
 
 ## See our related projects
 
+- [lundium](https://github.com/lundegaard/lundium) - Beautiful React component library.
 - [@redux-tools](https://github.com/lundegaard/redux-tools) - Modular
   Redux is possible!
 - [react-union](https://github.com/lundegaard/react-union) -
   Intergrate React apps into various CMSs seamlessly.
 - [validarium](https://github.com/lundegaard/validarium) - Validations
   done right.
-- [lundium](https://github.com/lundegaard/lundium) - Beautiful React component library.
 
 ## Licence
 
 This library is published under MIT licence, but it uses Mapy.cz API.<br>
-By using this library, you agree with Mapy.cz [Terms and conditions](http://api.mapy.cz/#pact)
+By using this library, you also agree with Mapy.cz [Terms and conditions](http://api.mapy.cz/#pact)
 
-© 2021 Lundegaard a.s.
+© 2022 Lundegaard a.s.

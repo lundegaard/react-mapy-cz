@@ -35,11 +35,11 @@ import { Map, LayerControl } from 'react-mapy-cz';
 	id="homepage-map-static-example"
 	zoom={15}
 	mapLayers={[
-		BaseLayers.BASE_NEW,
-		BaseLayers.TURIST_NEW,
-		BaseLayers.GEOGRAPHY,
-		BaseLayers.HISTORIC,
-		BaseLayers.TURIST_WINTER,
+		BASE_LAYERS.BASE_NEW,
+		BASE_LAYERS.TURIST_NEW,
+		BASE_LAYERS.GEOGRAPHY,
+		BASE_LAYERS.HISTORIC,
+		BASE_LAYERS.TURIST_WINTER,
 	]}
 >
 	<Map height="300px">

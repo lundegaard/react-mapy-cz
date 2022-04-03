@@ -1,4 +1,8 @@
-export const BaseLayers = {
+export const MAPYCZ_LOADER_SCRIPT_ID = 'mapy.cz-api-script';
+export const MAX_RETRIES = 3;
+export const RETRY_DELAY_MS = 300;
+
+export const BASE_LAYERS = {
 	BASE: 1,
 	TURIST: 2,
 	OPHOTO: 3,
@@ -25,7 +29,7 @@ export const BaseLayers = {
 	TURIST_NEW: 28,
 };
 
-export const RouteTypes = {
+export const ROUTE_TYPES = {
 	FAST: 'fast',
 	SHORT: 'short',
 	BIKE1: 'bike1',
@@ -38,7 +42,7 @@ export const RouteTypes = {
 export const DEFAULT_ROUTE_COLOR = '#f00';
 export const DEFAULT_ROUTE_WIDTH = 3;
 
-export const SMapLayerTypes = {
+export const SMAP_LAYER_TYPES = {
 	CANVAS: 'CANVAS',
 	GEOMETRY: 'GEOMETRY',
 	HUD: 'HUD',
