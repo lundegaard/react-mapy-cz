@@ -11,7 +11,7 @@ Multiple markers works with one prop consuming array of marker config objects, s
 ## How to use it
 
 ```js
-import { MapProvider, Map, MarkerLayer, MultipleMarkers } from 'react-mapy-cz';
+import { MapProvider, Map, MarkerLayer, MultipleMarkers } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<Map>

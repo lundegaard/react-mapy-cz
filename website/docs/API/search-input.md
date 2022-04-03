@@ -10,7 +10,7 @@ Suggestions are shown as a dropdown with icons and basic information about the r
 ## How to use it
 
 ```js
-import { MapProvider, Map, SearchInput } from 'react-mapy-cz';
+import { MapProvider, Map, SearchInput } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<SearchInput />

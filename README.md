@@ -17,7 +17,7 @@ A library of components for rendering maps. Goal of this library is to provide m
 </p>
 
 <p align="center">
-  <a href="https://github.com/lundegaard/react-mapy-cz">
+  <a href="https://github.com/lundegaard/mapy-cz-react">
     <img src="https://flat.badgen.net/badge/-/github?icon=github&label" alt="Github" />
   </a>
 
@@ -26,26 +26,26 @@ A library of components for rendering maps. Goal of this library is to provide m
 
 ## Getting started
 
-Installation `react-mapy-cz` lib as your dependency:
+Installation `mapy-cz-react` lib as your dependency:
 
 ```bash
-yarn add react-mapy-cz
+yarn add mapy-cz-react
 ```
 
 Or
 
 ```bash
-npm install react-mapy-cz
+npm install mapy-cz-react
 ```
 
-And look at our [Docs](https://lundegaard.github.io/react-mapy-cz/), right to [Getting started](https://lundegaard.github.io/react-mapy-cz/docs/getting-started), or check our [examples](https://lundegaard.github.io/react-mapy-cz/docs/Examples/01-static-map-with-one-marker) for most common use cases.
+And look at our [Docs](https://lundegaard.github.io/mapy-cz-react/), right to [Getting started](https://lundegaard.github.io/mapy-cz-react/docs/getting-started), or check our [examples](https://lundegaard.github.io/mapy-cz-react/docs/Examples/01-static-map-with-one-marker) for most common use cases.
 
 ## Contribution
 
 We are open to ideas and suggestions! Feel free to make PR!
 
 See
-[contribution guide](https://github.com/lundegaard/react-mapy-cz/blob/main/CONTRIBUTING.md)
+[contribution guide](https://github.com/lundegaard/mapy-cz-react/blob/main/CONTRIBUTING.md)
 for guidelines. <br /> <br />
 
 ## See our related projects
@@ -64,3 +64,7 @@ This library is published under MIT licence, but it uses Mapy.cz API.<br>
 By using this library, you also agree with Mapy.cz [Terms and conditions](http://api.mapy.cz/#pact)
 
 © 2022 Lundegaard a.s.
+
+## TODOs:
+
+- Ensure minimal reliance on `window` object

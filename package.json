@@ -1,15 +1,15 @@
 {
-  "name": "@react-mapy-cz/monorepo",
-  "version": "0.0.2",
+  "name": "@mapy-cz-react/monorepo",
+  "version": "0.0.1",
   "private": true,
   "description": "Mapy.cz API React wrapper",
   "contributors": [
     "Martin Machacek <martin.machacek@lundegaard.eu>"
   ],
   "license": "MIT",
-  "main": "src/index.js",
-  "unpkg": "dist/react-maps-cz.umd.js",
-  "module": "es/react-maps-cz.module.js",
+  "main": "core/src/index.js",
+  "unpkg": "core/dist/react-maps-cz.umd.js",
+  "module": "core/es/react-maps-cz.module.js",
   "workspaces": [
     "core",
     "website"
@@ -24,8 +24,8 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,mdx,md,html,json}\"",
     "release": "standard-version",
     "--- WORKSPACES": "-------------------------------------------------",
-    "core": "yarn workspace react-mapy-cz",
-    "website": "yarn workspace react-mapy-cz-docs",
+    "core": "yarn workspace mapy-cz-react",
+    "website": "yarn workspace mapy-cz-react-docs",
     "--- PUBLISHING": "-------------------------------------------------",
     "prepublish": "yarn build",
     "prepublishOnly": "yarn",

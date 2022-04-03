@@ -11,7 +11,7 @@ Route is defined by component RouteGeometry, since rendered result is a geometry
 ## How to use it
 
 ```js
-import { Map, MouseControl } from 'react-mapy-cz';
+import { Map, MouseControl } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<Map>

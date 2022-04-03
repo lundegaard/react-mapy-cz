@@ -15,10 +15,10 @@ React Mapy cz requires **React 16.13.1 or later**, so we can use React hooks and
 
 ```bash
 # If you use npm:
-npm install react-mapy-cz
+npm install mapy-cz-react
 
 # Or if you use Yarn:
-yarn add react-mapy-cz
+yarn add mapy-cz-react
 ```
 
 ## Rendering your first map
@@ -26,17 +26,17 @@ yarn add react-mapy-cz
 In order to render basic map, add lines below into your app. These lines ensure that you have Mapy.cz API script loaded and will render map instance in default view.
 
 ```jsx
-import { MapProvider, Map } from 'react-mapy-cz';
+import { MapProvider, Map } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50, lng: 15 }}>
 	<Map />
-</MapProvider>
+</MapProvider>;
 ```
 
 And done! Now you should be successfully running a static mapy.cz map in our app.
 
 ## Next steps
 
-If you'd like to know more or just make the map interactive, take a look at our [Tutorials](https://lundegaard.github.io/react-mapy-cz/docs/Tutorial/quick-start).
+If you'd like to know more or just make the map interactive, take a look at our [Tutorials](https://lundegaard.github.io/mapy-cz-react/docs/Tutorial/quick-start).
 
-Or, if you'd like to take a look at all the features, look into [API Reference](https://lundegaard.github.io/react-mapy-cz/docs/API/map-provider).
+Or, if you'd like to take a look at all the features, look into [API Reference](https://lundegaard.github.io/mapy-cz-react/docs/API/map-provider).

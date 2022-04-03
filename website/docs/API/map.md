@@ -11,7 +11,7 @@ Consumes id provided in [MapProvider](/docs/API/map-provider) component and rend
 ## How to use it
 
 ```js
-import { Map } from 'react-mapy-cz';
+import { Map } from 'mapy-cz-react';
 
 <Map>...other components, controls, markers, etc...</Map>;
 ```

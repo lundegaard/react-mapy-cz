@@ -10,12 +10,12 @@ const appTitle = 'React Mapy.cz';
 		title: appTitle,
 		tagline: 'Amazing React wrapper of mapy.cz API',
 		url: 'https://your-docusaurus-test-site.com',
-		baseUrl: '/react-mapy-cz/',
+		baseUrl: '/mapy-cz-react/',
 		onBrokenLinks: 'throw',
 		onBrokenMarkdownLinks: 'warn',
 		favicon: 'img/favicon.png',
 		organizationName: 'lundegaard', // Usually your GitHub org/user name.
-		projectName: 'react-mapy-cz', // Usually your repo name.
+		projectName: 'mapy-cz-react', // Usually your repo name.
 		trailingSlash: false,
 		presets: [
 			[
@@ -24,7 +24,7 @@ const appTitle = 'React Mapy.cz';
 				({
 					docs: {
 						sidebarPath: require.resolve('./sidebars.js'),
-						editUrl: 'https://github.com/lundegaard/react-mapy-cz',
+						editUrl: 'https://github.com/lundegaard/mapy-cz-react',
 					},
 					theme: {
 						customCss: require.resolve('./src/css/custom.css'),
@@ -51,7 +51,7 @@ const appTitle = 'React Mapy.cz';
 							label: 'Getting started',
 						},
 						{
-							href: 'https://github.com/lundegaard/react-mapy-cz',
+							href: 'https://github.com/lundegaard/mapy-cz-react',
 							label: 'GitHub',
 							position: 'right',
 						},
@@ -95,7 +95,7 @@ const appTitle = 'React Mapy.cz';
 								},
 								{
 									label: 'GitHub',
-									href: 'https://github.com/lundegaard/react-mapy-cz',
+									href: 'https://github.com/lundegaard/mapy-cz-react',
 								},
 							],
 						},

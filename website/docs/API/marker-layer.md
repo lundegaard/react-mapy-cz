@@ -9,7 +9,7 @@ Marker layer is an invisible layer on top of maps, that can hold active elements
 ## How to use it
 
 ```js
-import { MapProvider, Map, MarkerLayer } from 'react-mapy-cz';
+import { MapProvider, Map, MarkerLayer } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<Map>

@@ -11,7 +11,7 @@ This component adds possibility to interact with map through mouse or touch. By 
 ## How to use it
 
 ```js
-import { Map, MouseControl } from 'react-mapy-cz';
+import { Map, MouseControl } from 'mapy-cz-react';
 
 <Map>
 	<MouseControl />

@@ -6,8 +6,8 @@ import { useMap } from './MapContext';
 export const RouteContext = createContext(null);
 
 const RouteLayer = ({ children }) => {
-	const { map } = useMap();
-	const pathLayer = new window.SMap.Layer.Geometry();
+	const { map, SMap } = useMap();
+	const pathLayer = new SMap.Layer.Geometry();
 
 	map.addLayer(pathLayer);
 	pathLayer.enable();

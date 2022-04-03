@@ -8,6 +8,7 @@
       "ignoreChanges": ["*.md", "website/**"]
     }
   },
+  "packages": ["core"],
   "npmClient": "yarn",
   "useWorkspaces": true
 }

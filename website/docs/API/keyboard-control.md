@@ -14,7 +14,7 @@ This component adds possibility to interact with map through keyboard. Working k
 ## How to use it
 
 ```js
-import { Map, KeyboarControl } from 'react-mapy-cz';
+import { Map, KeyboarControl } from 'mapy-cz-react';
 
 <Map>
 	<KeyboarControl />
