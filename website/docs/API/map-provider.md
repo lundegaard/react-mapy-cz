@@ -29,4 +29,4 @@ import { MapProvider } from 'react-mapy-cz';
 | zoom      | number | `5`             | Initial map zoom. Actual zoom is realative to `minZoom` and `maxZoom` props.       |        :x:         |
 | minZoom   | number | `1`             | Minimal value of zoom. Sets lower boundary for zoom in map.                        |        :x:         |
 | maxZoom   | number | `18`            | Maximal value of zoom. Sets upper boundary for zoom in map.                        |        :x:         |
-| mapLayers | array  | `5`             | String array of used map layers. Accepted values are in constant `BaseLayers`.     |        :x:         |
+| mapLayers | array  | `5`             | String array of used map layers. Accepted values are in constant `BASE_LAYERS`.    |        :x:         |

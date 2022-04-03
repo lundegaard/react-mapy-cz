@@ -1,7 +1,7 @@
 import React, { createContext, useMemo } from 'react';
 import { arrayOf, node, number, oneOf, shape, string } from 'prop-types';
 
-import { BaseLayers } from '../utils/constants';
+import { BASE_LAYERS } from '../utils/constants';
 import { coordsShape } from '../utils/shapes';
 import mapScriptLoader from '../hoc/mapScriptLoader';
 import setMapCenter from '../utils/setMapCenter';
@@ -17,7 +17,7 @@ const MapProvider = ({
 	center,
 	children,
 	id = 'mapy-cz-map',
-	mapLayers = [BaseLayers.BASE_NEW],
+	mapLayers = [BASE_LAYERS.BASE_NEW],
 	maxZoom = 18,
 	minZoom = 1,
 	zoom = 5,
@@ -46,7 +46,7 @@ MapProvider.propTypes = {
 	center: shape(coordsShape).isRequired,
 	children: node,
 	id: string,
-	mapLayers: arrayOf([oneOf(Object.keys(BaseLayers))]),
+	mapLayers: arrayOf([oneOf(Object.keys(BASE_LAYERS))]),
 	maxZoom: number,
 	minZoom: number,
 	zoom: number,

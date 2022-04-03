@@ -5,7 +5,7 @@ import { coordsShape } from '../utils/shapes';
 import {
 	DEFAULT_ROUTE_COLOR,
 	DEFAULT_ROUTE_WIDTH,
-	RouteTypes,
+	ROUTE_TYPES,
 } from '../utils/constants';
 
 import { RouteContext } from './RouteLayer';
@@ -14,7 +14,7 @@ const RouteGeometry = ({
 	color = DEFAULT_ROUTE_COLOR,
 	coords,
 	id,
-	routeType = RouteTypes.FAST,
+	routeType = ROUTE_TYPES.FAST,
 	width = DEFAULT_ROUTE_WIDTH,
 }) => {
 	const route = useContext(RouteContext);
