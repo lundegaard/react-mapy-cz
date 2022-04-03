@@ -1,6 +1,6 @@
 {
-  "name": "react-mapy-cz-docs",
-  "version": "0.0.0",
+  "name": "mapy-cz-react-docs",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

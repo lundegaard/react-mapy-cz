@@ -11,13 +11,13 @@ This component adds zoom buttons to right side of map, enabling user to zoom in 
 ## How to use it
 
 ```js
-import { Map, ZoomControl } from 'react-mapy-cz';
+import { Map, ZoomControl } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<Map>
 		<ZoomControl />
 	</Map>
-</MapProvider>
+</MapProvider>;
 ```
 
 ## Props

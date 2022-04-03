@@ -1,6 +1,6 @@
 {
-  "name": "react-mapy-cz",
-  "version": "0.0.1",
+  "name": "mapy-cz-react",
+  "version": "0.0.2",
   "sideEffects": [
     "./src/hoc/mapScriptLoader.js"
   ],
@@ -15,5 +15,6 @@
   },
   "dependencies": {
     "invariant": "^2.2.4"
-  }
+  },
+  "gitHead": "c454c9673d9f1f177696655364245de1bbb3a36b"
 }

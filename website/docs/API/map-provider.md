@@ -13,7 +13,7 @@ Component comes in handy when you need to work with map instance, like programma
 ## How to use it
 
 ```js
-import { MapProvider } from 'react-mapy-cz';
+import { MapProvider } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50, lng: 14 }} id="map-id-example" zoom={5}>
 	...other components

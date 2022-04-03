@@ -12,13 +12,12 @@ Clustering is a functionality added to individual marker layer. That meaning Clu
 ## How to use it
 
 ```js
-import { MapProvider, Map, MarkerLayer, Clusterer } from 'react-mapy-cz';
+import { MapProvider, Map, MarkerLayer, Clusterer } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<Map>
 		<MarkerLayer>
 			<Clusterer />
-
 			...Some Marker or MultipleMarkers component
 		</MarkerLayer>
 	</Map>
@@ -27,9 +26,9 @@ import { MapProvider, Map, MarkerLayer, Clusterer } from 'react-mapy-cz';
 
 ## Props
 
-| Name   | Type   | Default  | Description   | Required |
-| ------ | ------ | -------- | ------------- | :------: |
-|maxDistance| number | `100` | Distance in which point is included into cluster  |   :x:    |
+| Name        | Type   | Default | Description                                      | Required |
+| ----------- | ------ | ------- | ------------------------------------------------ | :------: |
+| maxDistance | number | `100`   | Distance in which point is included into cluster |   :x:    |
 
 ## Example
 

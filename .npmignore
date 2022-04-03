@@ -1,12 +1,13 @@
 /.github
 /.husky
-/src
+/.yarn
 /website
+/core/src
 .babelrc
 .editorconfig
 .eslintrc.js
 .gigignore
 .lintstagedrc
 .prettierrc
-webpack.config.js
+**/webpack.config.js
 commitlint.config.js

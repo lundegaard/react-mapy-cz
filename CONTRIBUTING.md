@@ -2,11 +2,11 @@
 
 Create a new branch from an up to date master branch on your fork.
 
-1. Fork the react-mapy-cz repository on Github
+1. Fork the mapy-cz-react repository on Github
 2. Clone your fork to your local machine
 
 ```sh
-git clone git@github.com:<yourname>/react-mapy-cz.git
+git clone git@github.com:<yourname>/mapy-cz-react.git
 ```
 
 3. Create a branch
@@ -25,7 +25,7 @@ For synchronizing master branch between fork and lundegaard
 repository:
 
 ```sh
-git remote add upstream git@github.com:lundegaard/react-mapy-cz.git
+git remote add upstream git@github.com:lundegaard/mapy-cz-react.git
 git checkout main
 git pull upstream main
 ```

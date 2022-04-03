@@ -13,7 +13,7 @@ By using this control, map will render Layer changer in top left corner in map c
 ## How to use it
 
 ```js
-import { Map, LayerControl } from 'react-mapy-cz';
+import { Map, LayerControl } from 'mapy-cz-react';
 
 <Map>
 	<LayerControl width={65} pageSize={3} />

@@ -17,7 +17,7 @@ So lets get started! :)
 
 ## Rendering simple map
 
-First, we need to have `react-mapy-cz` installed as a dependency, as shown in [Getting started](../getting-started#installation).
+First, we need to have `mapy-cz-react` installed as a dependency, as shown in [Getting started](../getting-started#installation).
 
 Then, add `MapProvider` and `Map` as its child to the place where you want the map to be rendered. The provider component takes care of adding mapy.cz API script into document head, so all features are available.
 
@@ -25,7 +25,7 @@ In code, it could look something like this:
 
 ```jsx
 import React from 'react';
-import { MapProvider, Map } from 'react-mapy-cz';
+import { MapProvider, Map } from 'mapy-cz-react';
 
 const MyApp = () => (
 	<div id="my-app-root">
@@ -38,6 +38,7 @@ const MyApp = () => (
 ```
 
 ### Important
+
 MapProvider injects scripts into head of document and waits for them to load. Until everything is loaded, provider renders a loading string instead of children.
 This is due to the fact, that without loaded API we cannot create map instance.
 

@@ -17,11 +17,6 @@ const useMapInit = (center, id, mapLayers, maxZoom, minZoom, SMap, zoom) => {
 
 			setMap(mapInstance);
 		}
-
-		// return () => {
-		// 	console.log('destroy');
-		// 	map?.$destructor();
-		// };
 	}, [center, id, map, mapLayers, maxZoom, minZoom, SMap, zoom]);
 
 	return map;

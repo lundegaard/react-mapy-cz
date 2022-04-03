@@ -11,13 +11,13 @@ This component adds behaviour - map stretches to whole width and height of paren
 ## How to use it
 
 ```js
-import { Map, SyncControl } from 'react-mapy-cz';
+import { Map, SyncControl } from 'mapy-cz-react';
 
 <MapProvider center={{ lat: 50.096406, lng: 14.463071 }} id="map-example">
 	<Map>
 		<SyncControl />
 	</Map>
-</MapProvider>
+</MapProvider>;
 ```
 
 ## Props
