@@ -10,21 +10,27 @@
   "main": "src/index.js",
   "unpkg": "dist/react-maps-cz.umd.js",
   "module": "es/react-maps-cz.module.js",
-  "scripts": {
-    "build": "yarn core build",
-    "start": "yarn website start",
-    "lint": "eslint --ignore-path .gitignore ./",
-    "prepare": "husky install",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,mdx,md,html,json}\"",
-    "release": "standard-version",
-    "test": "jest --passWithNoTests",
-    "core": "yarn workspace react-mapy-cz",
-    "website": "yarn workspace react-mapy-cz-docs"
-  },
   "workspaces": [
     "core",
     "website"
   ],
+  "scripts": {
+    "--- SCRIPTS": "----------------------------------------------------",
+    "build": "yarn core build",
+    "start": "yarn website start",
+    "lint": "eslint --ignore-path .gitignore ./",
+    "prepare": "husky install",
+    "test": "jest --passWithNoTests",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,mdx,md,html,json}\"",
+    "release": "standard-version",
+    "--- WORKSPACES": "-------------------------------------------------",
+    "core": "yarn workspace react-mapy-cz",
+    "website": "yarn workspace react-mapy-cz-docs",
+    "--- PUBLISHING": "-------------------------------------------------",
+    "prepublish": "yarn build",
+    "prepublishOnly": "yarn",
+    "lernaPublish": "lerna publish"
+  },
   "peerDependencies": {
     "prop-types": ">=15.7.2",
     "react": ">=16.13.1",
@@ -59,6 +65,7 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
+    "lerna": "^4.0.0",
     "lint-staged": "^12.1.7",
     "prettier": "^2.4.1",
     "standard-version": "^9.3.2",
