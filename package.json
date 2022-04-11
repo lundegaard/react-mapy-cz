@@ -8,8 +8,8 @@
   ],
   "license": "MIT",
   "main": "core/src/index.js",
-  "unpkg": "core/dist/react-maps-cz.umd.js",
-  "module": "core/es/react-maps-cz.module.js",
+  "unpkg": "core/dist/mapy-cz-react.umd.js",
+  "module": "core/es/mapy-cz-react.module.js",
   "workspaces": [
     "core",
     "website"
@@ -22,14 +22,14 @@
     "prepare": "husky install",
     "test": "jest --passWithNoTests",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,mdx,md,html,json}\"",
-    "release": "standard-version",
     "--- WORKSPACES": "-------------------------------------------------",
     "core": "yarn workspace mapy-cz-react",
     "website": "yarn workspace mapy-cz-react-docs",
     "--- PUBLISHING": "-------------------------------------------------",
+    "version": "standard-version",
     "prepublish": "yarn build",
     "prepublishOnly": "yarn",
-    "lernaPublish": "lerna publish"
+    "publish": "yarn version && lerna publish"
   },
   "peerDependencies": {
     "prop-types": ">=15.7.2",
@@ -72,5 +72,12 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1"
+  },
+  "standard-version": {
+    "skip": {
+      "bump": true,
+      "commit": true,
+      "tag": true
+    }
   }
 }

@@ -1,5 +1,5 @@
 <h1 align="center">
-    React mapy.cz
+    Mapy.cz React
 </h1>
 
 <p align="center">
@@ -17,7 +17,7 @@ A library of components for rendering maps. Goal of this library is to provide m
 </p>
 
 <p align="center">
-  <a href="https://github.com/lundegaard/mapy-cz-react">
+  <a href="https://github.com/lundegaard/react-mapy-cz">
     <img src="https://flat.badgen.net/badge/-/github?icon=github&label" alt="Github" />
   </a>
 
@@ -68,3 +68,4 @@ By using this library, you also agree with Mapy.cz [Terms and conditions](http:/
 ## TODOs:
 
 - Ensure minimal reliance on `window` object
+- Refactor useGetMyLocation hook so it works better
