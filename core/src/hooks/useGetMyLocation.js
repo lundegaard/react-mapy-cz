@@ -9,6 +9,11 @@ const useGetMyLocation = (onLocationFound, onError = () => {}) => {
 	const { setMapCenter } = useMap();
 
 	useEffect(() => {
+		// Geolocation not available
+		if (!navigator?.geolocation) {
+			setGeolocationEnabled(false);
+		}
+		// Geolocation disabled
 		if (navigator?.permissions) {
 			navigator.permissions
 				.query({ name: 'geolocation' })

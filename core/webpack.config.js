@@ -25,7 +25,7 @@ module.exports = Object.values(targets).map((target) => ({
 	entry: path.resolve(packageRoot, 'src/index.js'),
 	output: {
 		path: path.resolve(packageRoot, outputPathsByTarget[target]),
-		filename: `react-maps-cz.${target}.js`,
+		filename: `mapy-cz-react.${target}.js`,
 		library: {
 			type: libraryTargetsByTarget[target],
 			umdNamedDefine: true,

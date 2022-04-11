@@ -4,6 +4,9 @@
   "sideEffects": [
     "./src/hoc/mapScriptLoader.js"
   ],
+  "main": "lib/mapy-cz-react.commonjs.js",
+  "unpkg": "dist/mapy-cz-react.umd.js",
+  "module": "es/mapy-cz-react.module.js",
   "license": "MIT",
   "scripts": {
     "build": "webpack"
