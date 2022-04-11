@@ -1,6 +1,6 @@
 {
   "name": "@mapy-cz-react/monorepo",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "private": true,
   "description": "Mapy.cz API React wrapper",
   "contributors": [
@@ -29,7 +29,7 @@
     "version": "standard-version",
     "prepublish": "yarn build",
     "prepublishOnly": "yarn",
-    "publish": "yarn version && lerna publish"
+    "lernaPublish": "yarn version && lerna publish"
   },
   "peerDependencies": {
     "prop-types": ">=15.7.2",
