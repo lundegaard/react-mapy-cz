@@ -26,10 +26,10 @@
     "core": "yarn workspace mapy-cz-react",
     "website": "yarn workspace mapy-cz-react-docs",
     "--- PUBLISHING": "-------------------------------------------------",
-    "version": "standard-version",
+    "generateChangelog": "standard-version",
     "prepublish": "yarn build",
     "prepublishOnly": "yarn",
-    "lernaPublish": "yarn version && lerna publish"
+    "lernaPublish": "yarn generateChangelog && lerna publish"
   },
   "peerDependencies": {
     "prop-types": ">=15.7.2",

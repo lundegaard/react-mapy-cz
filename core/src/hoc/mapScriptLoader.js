@@ -24,7 +24,7 @@ const mapScriptLoader = (Component) => (props) => {
 
 	useEffect(() => {
 		// When script is already loaded, move to onLoadCallback
-		if (document.getElementById('mapy.cz-api-script')) {
+		if (document.getElementById(MAPYCZ_LOADER_SCRIPT_ID)) {
 			onLoadCallback();
 			return;
 		}

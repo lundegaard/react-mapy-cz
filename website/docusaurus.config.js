@@ -9,13 +9,13 @@ const appTitle = 'React Mapy.cz';
 	module.exports = {
 		title: appTitle,
 		tagline: 'Amazing React wrapper of mapy.cz API',
-		url: 'https://your-docusaurus-test-site.com',
-		baseUrl: '/mapy-cz-react/',
+		url: 'https://lundegaard.github.io/',
+		baseUrl: '/react-mapy-cz/',
 		onBrokenLinks: 'throw',
 		onBrokenMarkdownLinks: 'warn',
 		favicon: 'img/favicon.png',
 		organizationName: 'lundegaard', // Usually your GitHub org/user name.
-		projectName: 'mapy-cz-react', // Usually your repo name.
+		projectName: 'react-mapy-cz', // Usually your repo name.
 		trailingSlash: false,
 		presets: [
 			[

@@ -1,9 +1,13 @@
 import React, { createContext, useEffect } from 'react';
 import { node } from 'prop-types';
 
+import { getContextHook } from '../utils/getContextHook';
+
 import { useMap } from './MapContext';
 
-export const RouteContext = createContext(null);
+const RouteContext = createContext();
+
+export const useRoute = getContextHook(RouteContext, 'RouteProvider');
 
 const RouteLayer = ({ children }) => {
 	const { map, SMap } = useMap();
