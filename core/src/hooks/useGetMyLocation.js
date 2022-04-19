@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useMap } from '../components/MapContext';
 
-const useGetMyLocation = (onLocationFound, onError = () => {}) => {
+const useGetMyLocation = (onLocationFound, onError = () => null) => {
 	const [loading, setLoading] = useState(false);
 	const [geolocationEnabled, setGeolocationEnabled] = useState(true);
 

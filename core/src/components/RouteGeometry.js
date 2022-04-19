@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
 
 import { coordsShape } from '../utils/shapes';
@@ -8,7 +7,8 @@ import {
 	ROUTE_TYPES,
 } from '../utils/constants';
 
-import { RouteContext } from './RouteLayer';
+import { useRoute } from './RouteLayer';
+import { useMap } from './MapContext';
 
 const RouteGeometry = ({
 	color = DEFAULT_ROUTE_COLOR,
@@ -17,10 +17,9 @@ const RouteGeometry = ({
 	routeType = ROUTE_TYPES.FAST,
 	width = DEFAULT_ROUTE_WIDTH,
 }) => {
-	const route = useContext(RouteContext);
-	const points = coords.map(({ lng, lat }) =>
-		window.SMap.Coords.fromWGS84(lng, lat)
-	);
+	const { SMap } = useMap();
+	const route = useRoute();
+	const points = coords.map(({ lng, lat }) => SMap.Coords.fromWGS84(lng, lat));
 	const geometryOptions = {
 		color,
 		width,
@@ -28,8 +27,8 @@ const RouteGeometry = ({
 
 	const getRoute = (results) => {
 		const geometryPoints = results && results.getResults().geometry;
-		const polyline = new window.SMap.Geometry(
-			window.SMap.GEOMETRY_POLYLINE,
+		const polyline = new SMap.Geometry(
+			SMap.GEOMETRY_POLYLINE,
 			id,
 			geometryPoints,
 			geometryOptions
@@ -37,7 +36,7 @@ const RouteGeometry = ({
 		route?.addGeometry(polyline);
 	};
 
-	new window.SMap.Route(points, getRoute, { criterion: routeType });
+	new SMap.Route(points, getRoute, { criterion: routeType });
 
 	return null;
 };

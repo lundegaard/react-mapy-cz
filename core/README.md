@@ -38,7 +38,7 @@ Or
 npm install mapy-cz-react
 ```
 
-And look at our [Docs](https://lundegaard.github.io/mapy-cz-react/), right to [Getting started](https://lundegaard.github.io/mapy-cz-react/docs/getting-started), or check our [examples](https://lundegaard.github.io/mapy-cz-react/docs/Examples/01-static-map-with-one-marker) for most common use cases.
+And look at our [Docs](https://lundegaard.github.io/react-mapy-cz/), right to [Getting started](https://lundegaard.github.io/react-mapy-cz/docs/getting-started), or check our [examples](https://lundegaard.github.io/react-mapy-cz/docs/Examples/01-static-map-with-one-marker) for most common use cases.
 
 ## Contribution
 
