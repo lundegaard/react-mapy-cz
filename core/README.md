@@ -1,10 +1,10 @@
 <h1 align="center">
-    Mapy.cz React
+	<img alt="Mapy cz React logo" src="../mapy-cz-react-logo.png" width="120" />
 </h1>
 
 <p align="center">
   <a href="https://lundegaard.eu">
-    <img alt="by Lundegaard" src="./by-lundegaard.png" width="120" />
+    <img alt="by Lundegaard" src="../by-lundegaard.png" width="120" />
   </a>
 </p>
 

@@ -2,6 +2,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const appTitle = 'React Mapy.cz';
+const githubUrl = 'https://github.com/lundegaard/react-mapy-cz';
 
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -24,7 +25,7 @@ const appTitle = 'React Mapy.cz';
 				({
 					docs: {
 						sidebarPath: require.resolve('./sidebars.js'),
-						editUrl: 'https://github.com/lundegaard/mapy-cz-react',
+						editUrl: `${githubUrl}`,
 					},
 					theme: {
 						customCss: require.resolve('./src/css/custom.css'),
@@ -41,7 +42,7 @@ const appTitle = 'React Mapy.cz';
 					title: appTitle,
 					logo: {
 						alt: appTitle,
-						src: 'img/logo.svg',
+						src: `${githubUrl}/blob/main/core/react-mapy-cz.png?raw=true`,
 					},
 					items: [
 						{
@@ -51,7 +52,7 @@ const appTitle = 'React Mapy.cz';
 							label: 'Getting started',
 						},
 						{
-							href: 'https://github.com/lundegaard/mapy-cz-react',
+							href: `${githubUrl}`,
 							label: 'GitHub',
 							position: 'right',
 						},
@@ -95,7 +96,7 @@ const appTitle = 'React Mapy.cz';
 								},
 								{
 									label: 'GitHub',
-									href: 'https://github.com/lundegaard/mapy-cz-react',
+									href: `${githubUrl}`,
 								},
 							],
 						},
