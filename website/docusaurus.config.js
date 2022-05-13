@@ -42,14 +42,14 @@ const githubUrl = 'https://github.com/lundegaard/react-mapy-cz';
 					title: appTitle,
 					logo: {
 						alt: appTitle,
-						src: `${githubUrl}/blob/main/core/react-mapy-cz.png?raw=true`,
+						src: `https://github.com/lundegaard/react-mapy-cz/blob/chore/docs/mapy-cz-react-logo.png?raw=true`,
 					},
 					items: [
 						{
 							type: 'doc',
 							docId: 'getting-started',
 							position: 'left',
-							label: 'Getting started',
+							label: 'Docs',
 						},
 						{
 							href: `${githubUrl}`,

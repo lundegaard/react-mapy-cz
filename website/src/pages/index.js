@@ -20,7 +20,12 @@ export default function Home() {
 		>
 			<header className={clsx('hero hero--primary', styles.heroBanner)}>
 				<div className="container">
-					<h1 className="hero__title">{siteConfig.title}</h1>
+					<h1 className="hero__title">
+						<img
+							src="mapy-cz-react-logo-transparent.png"
+							alt={siteConfig.title}
+						/>
+					</h1>
 					<p className="hero__subtitle">{siteConfig.tagline}</p>
 					<p className="hero__subtitle">
 						<img src={byLundegaard} alt="by lundegaard" width="170" />
