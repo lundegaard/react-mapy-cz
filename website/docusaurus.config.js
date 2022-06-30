@@ -39,7 +39,6 @@ const githubUrl = 'https://github.com/lundegaard/react-mapy-cz';
 			/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 			({
 				navbar: {
-					title: appTitle,
 					logo: {
 						alt: appTitle,
 						src: `https://github.com/lundegaard/react-mapy-cz/blob/chore/docs/mapy-cz-react-logo.png?raw=true`,
