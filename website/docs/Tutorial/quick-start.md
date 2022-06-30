@@ -44,12 +44,173 @@ This is due to the fact, that without loaded API we cannot create map instance.
 
 ## Making map interactive with Controls
 
-:construction: Sorry, we are still writing this section, check again in some time.
+You can interact with the map with controls. Try to add `ZoomControl`, `KeyboardControl` or `MouseControl` and see what happens.
+
+```jsx
+import React from 'react';
+import {
+	KeyboardControl,
+	MapProvider,
+	Map,
+	MouseControl,
+	ZoomControl,
+} from 'mapy-cz-react';
+
+const MyApp = () => (
+	<div id="my-app-root">
+		... Some components
+		<MapProvider center={{ lng: 14.4608576, lat: 50.0963478 }} zoom={16}>
+			<Map>
+				<ZoomControl />
+				<KeyboardControl />
+				<MouseControl zoom pan wheel />
+			</Map>
+		</MapProvider>
+	</div>
+);
+```
 
 ## Adding points to map - Markers
 
-:construction: Sorry, we are still writing this section, check again in some time
+In case you want to indicate the exact location, you can add `MarkerLayer` and `Marker` with location coordinates.
+
+```jsx
+import React from 'react';
+import { MapProvider, Map, Marker, MarkerLayer } from 'mapy-cz-react';
+
+const MyApp = () => (
+	<div id="my-app-root">
+		... Some components
+		<MapProvider center={{ lng: 14.4608576, lat: 50.0963478 }} zoom={16}>
+			<Map>
+				<MarkerLayer>
+					<Marker coords={{ longitude: 14.4608576, latitude: 50.0963478 }} />
+				</MarkerLayer>
+			</Map>
+		</MapProvider>
+	</div>
+);
+```
+
+When you need to mark multiple locations, just add `MarkerLayer` with `MultipleMarkers` to the map and pass an array with points as `markersData` to the `MultipleMarkers` component. You can even add `Clusterer` component to group nearby points together.
+
+```jsx
+import React from 'react';
+import {
+	Clusterer,
+	MapProvider,
+	Map,
+	MarkerLayer,
+	MultipleMarkers,
+} from 'mapy-cz-react';
+
+const MyApp = () => (
+	<div id="my-app-root">
+		... Some components
+		<MapProvider center={{ lng: 14.4608576, lat: 50.0963478 }} zoom={16}>
+			<Map>
+				<MarkerLayer>
+					<Clusterer />
+					<MultipleMarkers
+						markersData={[
+							{
+								gps: { longitude: 14.4608576, latitude: 50.0963478 },
+								name: 'Lundegaard s.r.o.',
+							},
+							{
+								gps: { longitude: 16.6231535, latitude: 49.186054 },
+								name: 'Lundegaard s.r.o.',
+							},
+							{
+								gps: { longitude: 15.8287533, latitude: 50.2092489 },
+								name: 'Lundegaard s.r.o.',
+							},
+							{
+								gps: { longitude: 21.2391831, latitude: 48.7287386 },
+								name: 'Lundegaard Slovensko s.r.o.',
+							},
+							{
+								gps: { longitude: 11.0712403, latitude: 49.4517557 },
+								name: 'Lundegaard s.r.o.',
+							},
+						].map((point) => ({
+							coords: point.gps,
+							tooltip: point.name,
+							...point,
+						}))}
+					/>
+				</MarkerLayer>
+			</Map>
+		</MapProvider>
+	</div>
+);
+```
 
 ## How to listen to events on map
 
-:construction: Sorry, we are still writing this section, check again in some time
+If you want to add custom behaviour on click events, you can do it by using `Signals`. You can easily define and pass your own `onMarkerClick` and `onClusterClick` function.
+
+```jsx
+import React from 'react';
+import {
+	Clusterer,
+	MapProvider,
+	Map,
+	MarkerLayer,
+	MultipleMarkers,
+	Signals,
+} from 'mapy-cz-react';
+
+const MyApp = () => {
+	const onMarkerClick = ({ _options }) =>
+		console.log(`You clicked on marker: ${_options.title}`);
+
+	const onClusterClick = ({ _options }) =>
+		console.log(`You clicked on cluster: ${_options.title}`);
+
+	return (
+		<div id="my-app-root">
+			... Some components
+			<MapProvider center={{ lng: 14.4608576, lat: 50.0963478 }}>
+				<Map>
+					<Signals
+						onMarkerClick={onMarkerClick}
+						onClusterClick={onClusterClick}
+					/>
+					<MarkerLayer>
+						<Clusterer />
+						<MultipleMarkers
+							markersData={[
+								{
+									gps: { longitude: 14.4608576, latitude: 50.0963478 },
+									name: 'Lundegaard s.r.o.',
+								},
+								{
+									gps: { longitude: 16.6231535, latitude: 49.186054 },
+									name: 'Lundegaard s.r.o.',
+								},
+								{
+									gps: { longitude: 15.8287533, latitude: 50.2092489 },
+									name: 'Lundegaard s.r.o.',
+								},
+								{
+									gps: { longitude: 21.2391831, latitude: 48.7287386 },
+									name: 'Lundegaard Slovensko s.r.o.',
+								},
+								{
+									gps: { longitude: 11.0712403, latitude: 49.4517557 },
+									name: 'Lundegaard s.r.o.',
+								},
+							].map((point) => ({
+								coords: point.gps,
+								tooltip: point.name,
+								...point,
+							}))}
+						/>
+					</MarkerLayer>
+				</Map>
+			</MapProvider>
+		</div>
+	);
+};
+```
