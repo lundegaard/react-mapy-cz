@@ -1,0 +1,47 @@
+export declare const MAPYCZ_LOADER_SCRIPT_ID = "mapy.cz-api-script";
+export declare const MAX_RETRIES = 3;
+export declare const RETRY_DELAY_MS = 300;
+export declare const BASE_LAYERS: {
+    BASE: number;
+    TURIST: number;
+    OPHOTO: number;
+    HYBRID: number;
+    HISTORIC: number;
+    BIKE: number;
+    TRAIL: number;
+    OPHOTO0203: number;
+    OPHOTO0406: number;
+    OBLIQUE: number;
+    SMART_BASE: number;
+    SMART_OPHOTO: number;
+    SMART_TURIST: number;
+    RELIEF: number;
+    TURIST_WINTER: number;
+    SMART_WINTER: number;
+    SUMMER: number;
+    SMART_SUMMER: number;
+    GEOGRAPHY: number;
+    OPHOTO1012: number;
+    HYBRID_SPARSE: number;
+    OPHOTO1415: number;
+    BASE_NEW: number;
+    TURIST_NEW: number;
+};
+export declare const ROUTE_TYPES: {
+    FAST: string;
+    SHORT: string;
+    BIKE1: string;
+    BIKE2: string;
+    BIKE3: string;
+    TURIST1: string;
+    TURIST2: string;
+};
+export declare const DEFAULT_ROUTE_COLOR = "#f00";
+export declare const DEFAULT_ROUTE_WIDTH = 3;
+export declare const SMAP_LAYER_TYPES: {
+    CANVAS: string;
+    GEOMETRY: string;
+    HUD: string;
+    IMAGE: string;
+    MARKER: string;
+};
