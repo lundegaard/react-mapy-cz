@@ -1,4 +1,10 @@
-const getRouteUrl = (start, destination, waypoints) => {
+import { Coords } from '../components/types';
+
+const getRouteUrl = (
+	start: Coords,
+	destination: Coords,
+	waypoints: Coords[]
+) => {
 	const routeObject = new window.SMap.URL.Route();
 
 	if (start) {

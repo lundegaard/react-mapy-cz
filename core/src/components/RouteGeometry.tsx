@@ -1,6 +1,5 @@
-import { arrayOf, number, shape, string } from 'prop-types';
+import { FC } from 'react';
 
-import { coordsShape } from '../utils/shapes';
 import {
 	DEFAULT_ROUTE_COLOR,
 	DEFAULT_ROUTE_WIDTH,
@@ -9,8 +8,17 @@ import {
 
 import { useRoute } from './RouteLayer';
 import { useMap } from './MapContext';
+import { Coords, RouteType } from './types';
 
-const RouteGeometry = ({
+export interface RouteGeometryProps {
+	color: string;
+	coords: Coords[];
+	id: string;
+	routeType: RouteType;
+	width: number;
+}
+
+const RouteGeometry: FC<RouteGeometryProps> = ({
 	color = DEFAULT_ROUTE_COLOR,
 	coords,
 	id,
@@ -25,7 +33,9 @@ const RouteGeometry = ({
 		width,
 	};
 
-	const getRoute = (results) => {
+	const getRoute = (results: {
+		getResults: () => { geometry: SMap.Coords };
+	}) => {
 		const geometryPoints = results && results.getResults().geometry;
 		const polyline = new SMap.Geometry(
 			SMap.GEOMETRY_POLYLINE,
@@ -33,20 +43,12 @@ const RouteGeometry = ({
 			geometryPoints,
 			geometryOptions
 		);
-		route?.addGeometry(polyline);
+		(route as SMap.Layer.Geometry)?.addGeometry(polyline);
 	};
 
 	new SMap.Route(points, getRoute, { criterion: routeType });
 
 	return null;
-};
-
-RouteGeometry.propTypes = {
-	color: string,
-	coords: arrayOf(shape(coordsShape)),
-	id: string,
-	routeType: string,
-	width: number,
 };
 
 export default RouteGeometry;

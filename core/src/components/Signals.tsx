@@ -1,5 +1,11 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
-import { func } from 'prop-types';
+import {
+	BaseSyntheticEvent,
+	FC,
+	MouseEventHandler,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+} from 'react';
 
 import { useMap } from './MapContext';
 
@@ -11,12 +17,18 @@ import { useMap } from './MapContext';
  *
  * @returns null
  */
-const Signals = ({ onClusterClick, onMarkerClick }) => {
+
+interface SignalsProps {
+	onClusterClick?: MouseEventHandler<HTMLElement>;
+	onMarkerClick?: MouseEventHandler<HTMLElement>;
+}
+
+const Signals: FC<SignalsProps> = ({ onClusterClick, onMarkerClick }) => {
 	const { map } = useMap();
 	// https://epicreact.dev/the-latest-ref-pattern-in-react/
 	const onClusterClickRef = useRef(onClusterClick);
 	const onMarkerClickRef = useRef(onMarkerClick);
-	const markerClickListenerIdRef = useRef();
+	const markerClickListenerIdRef = useRef<void>();
 
 	useLayoutEffect(() => {
 		onClusterClickRef.current = onClusterClick;
@@ -27,8 +39,8 @@ const Signals = ({ onClusterClick, onMarkerClick }) => {
 		// TODO: Add additional signals
 		if (onMarkerClickRef.current || onClusterClickRef.current) {
 			markerClickListenerIdRef.current = map
-				.getSignals()
-				.addListener(this, 'marker-click', (e) => {
+				?.getSignals()
+				.addListener(this, 'marker-click', (e: BaseSyntheticEvent) => {
 					if (!e.target._clusterOptions && onMarkerClickRef.current) {
 						onMarkerClickRef.current(e.target);
 					}
@@ -40,17 +52,12 @@ const Signals = ({ onClusterClick, onMarkerClick }) => {
 
 		return () => {
 			if (markerClickListenerIdRef.current) {
-				map.getSignals().removeListener(markerClickListenerIdRef.current);
+				map?.getSignals().removeListener(markerClickListenerIdRef.current);
 			}
 		};
 	}, [map]);
 
 	return null;
-};
-
-Signals.propTypes = {
-	onClusterClick: func,
-	onMarkerClick: func,
 };
 
 export default Signals;

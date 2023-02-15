@@ -1,9 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { arrayOf, shape } from 'prop-types';
+import { FC, useEffect, useRef } from 'react';
 
 import createMarker from '../utils/createMarker';
-import { markerShape } from '../utils/shapes';
 
+import { MarkerType } from './types';
 import { useMarkerLayer } from './MarkerLayer';
 import { useMap } from './MapContext';
 
@@ -17,11 +16,16 @@ import { useMap } from './MapContext';
  * @param {*} markersData
  * @returns component
  */
-const MultipleMarkers = ({ markersData }) => {
+
+export interface MultipleMarkersProps {
+	markersData: MarkerType[];
+}
+
+const MultipleMarkers: FC<MultipleMarkersProps> = ({ markersData }) => {
 	const markerLayer = useMarkerLayer();
 	const { SMap } = useMap();
-	const markersDataRef = useRef();
-	const markersRef = useRef();
+	const markersDataRef = useRef<MarkerType[]>();
+	const markersRef = useRef<SMap.Marker[]>();
 
 	useEffect(() => {
 		if (
@@ -41,10 +45,6 @@ const MultipleMarkers = ({ markersData }) => {
 	}, [markerLayer, markersData, SMap]);
 
 	return null;
-};
-
-MultipleMarkers.propTypes = {
-	markersData: arrayOf(shape(markerShape)).isRequired,
 };
 
 export default MultipleMarkers;

@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { useMap } from '../components/MapContext';
 
-const useGetMyLocation = (onLocationFound, onError = () => null) => {
+const useGetMyLocation = (
+	onLocationFound: (coords: { longitude: number; latitude: number }) => void,
+	onError = (error: GeolocationPositionError) => null
+) => {
 	const [loading, setLoading] = useState(false);
 	const [geolocationEnabled, setGeolocationEnabled] = useState(true);
 
@@ -15,13 +18,11 @@ const useGetMyLocation = (onLocationFound, onError = () => null) => {
 		}
 		// Geolocation disabled
 		if (navigator?.permissions) {
-			navigator.permissions
-				.query({ name: 'geolocation' })
-				.then(({ status }) => {
-					if (status === 'denied') {
-						setGeolocationEnabled(false);
-					}
-				});
+			navigator.permissions.query({ name: 'geolocation' }).then(({ state }) => {
+				if (state === 'denied') {
+					setGeolocationEnabled(false);
+				}
+			});
 		}
 	}, []);
 

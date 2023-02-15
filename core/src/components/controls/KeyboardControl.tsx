@@ -1,10 +1,17 @@
-import { bool } from 'prop-types';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 import { useMap } from '../MapContext';
 
+interface KeyboardControlProps {
+	pan?: boolean;
+	zoom?: boolean;
+}
+
 // TODO: Make sure that key events are consumed only here - no event bubling up
-const KeyboardControl = ({ pan = true, zoom = true }) => {
+const KeyboardControl: FC<KeyboardControlProps> = ({
+	pan = true,
+	zoom = true,
+}) => {
 	const { map, SMap } = useMap();
 
 	let mode = 0;
@@ -14,19 +21,14 @@ const KeyboardControl = ({ pan = true, zoom = true }) => {
 
 	useEffect(() => {
 		const keyboardControl = new SMap.Control.Keyboard(mode);
-		map.addControl(keyboardControl);
+		map?.addControl(keyboardControl);
 
 		return () => {
-			map.removeControl(keyboardControl);
+			map?.removeControl(keyboardControl);
 		};
 	}, [map, mode, SMap]);
 
 	return null;
-};
-
-KeyboardControl.propTypes = {
-	pan: bool,
-	zoom: bool,
 };
 
 export default KeyboardControl;

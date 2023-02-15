@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "core/types",
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "typeRoots": ["./core/src/typings"]
+  },
+  "include": ["core/src", "core/src/typings"],
+  "exclude": ["node_modules"]
+}
