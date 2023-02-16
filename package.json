@@ -11,6 +11,9 @@
   "unpkg": "core/dist/mapy-cz-react.umd.js",
   "module": "core/es/mapy-cz-react.module.js",
   "types": "core/types/index.d.ts",
+  "files": [
+    "core/types"
+  ],
   "workspaces": [
     "core",
     "website"
@@ -33,7 +36,6 @@
     "lernaPublish": "yarn generateChangelog && lerna publish"
   },
   "peerDependencies": {
-    "prop-types": ">=15.7.2",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1"
   },

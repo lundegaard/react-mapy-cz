@@ -6,7 +6,7 @@ import { Coords } from './types';
 export interface PointerProps {
 	coords: Coords;
 	redPointer?: boolean;
-	showDistance: boolean;
+	showDistance?: boolean;
 }
 
 const Pointer: FC<PointerProps> = ({

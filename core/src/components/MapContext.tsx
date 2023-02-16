@@ -17,7 +17,7 @@ export const useMap = getContextHook<ContextType | undefined>(
 
 export interface MapProviderProps {
 	center: Coords;
-	children?: ReactElement;
+	children: ReactElement;
 	id?: string;
 	mapLayers?: string[];
 	maxZoom?: number;

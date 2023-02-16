@@ -3,7 +3,7 @@ import { FC, useEffect } from 'react';
 import { useMap } from '../MapContext';
 
 export interface ZoomControlProps {
-	labels: { [key: number]: string };
+	labels?: { [key: number]: string };
 	showZoomMenu?: boolean;
 	sliderHeight?: number;
 	stepHeight?: number;
@@ -11,7 +11,7 @@ export interface ZoomControlProps {
 
 // https://api.mapy.cz/doc/SMap.Control.Zoom.html
 const ZoomControl: FC<ZoomControlProps> = ({
-	labels,
+	labels = {},
 	showZoomMenu,
 	sliderHeight = 16,
 	stepHeight = 9,

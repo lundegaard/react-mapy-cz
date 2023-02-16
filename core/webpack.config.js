@@ -39,7 +39,6 @@ module.exports = Object.values(targets).map((target) => ({
 	},
 	externals: {
 		react: 'react',
-		'prop-types': 'prop-types',
 	},
 	experiments: {
 		outputModule: libraryTargetsByTarget[target] === 'module',

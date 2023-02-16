@@ -18,6 +18,7 @@ export interface SearchInputProps {
 	inputValue?: string;
 	onSuggestItemSelect: (data: { longitude: number; latitude: number }) => void;
 	onValueChange?: (value: string) => void;
+	placeholder?: string;
 }
 
 const SearchInput: FC<SearchInputProps> = ({
@@ -28,6 +29,7 @@ const SearchInput: FC<SearchInputProps> = ({
 	inputValue,
 	onSuggestItemSelect,
 	onValueChange,
+	placeholder,
 }) => {
 	const [searchValue, setSearchValue] = useState('');
 
@@ -56,6 +58,7 @@ const SearchInput: FC<SearchInputProps> = ({
 				value={searchValue}
 				onChange={handleChange}
 				className={className}
+				placeholder={placeholder}
 			/>
 			{!disableGeolocation && <input type="submit" />}
 		</form>

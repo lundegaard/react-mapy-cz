@@ -11,11 +11,11 @@ import { useMap } from './MapContext';
 import { Coords, RouteType } from './types';
 
 export interface RouteGeometryProps {
-	color: string;
 	coords: Coords[];
 	id: string;
-	routeType: RouteType;
-	width: number;
+	color?: string;
+	routeType?: RouteType;
+	width?: number;
 }
 
 const RouteGeometry: FC<RouteGeometryProps> = ({
