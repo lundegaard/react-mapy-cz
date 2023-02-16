@@ -23,7 +23,7 @@ export interface MarkerType {
 
 export type LayerType = 'CANVAS' | 'GEOMETRY' | 'HUD' | 'IMAGE' | 'MARKER';
 
-export type SmapType = typeof SMap; // TODO: Is this correct?
+export type SmapType = typeof SMap;
 
 export interface ContextType {
 	activeLayers?: {

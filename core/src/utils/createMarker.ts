@@ -30,7 +30,6 @@ const createMarker = ({
 
 		card.getHeader().innerHTML = cardHeaderText ?? '';
 		card.getBody().innerHTML = cardBodyText ?? '';
-		// TODO: Fix type definition
 		marker.decorate(window.SMap.Marker.Feature.Card, card);
 	}
 

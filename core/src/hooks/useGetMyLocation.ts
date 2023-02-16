@@ -4,6 +4,7 @@ import { useMap } from '../components/MapContext';
 
 const useGetMyLocation = (
 	onLocationFound: (coords: { longitude: number; latitude: number }) => void,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	onError = (error: GeolocationPositionError) => null
 ) => {
 	const [loading, setLoading] = useState(false);

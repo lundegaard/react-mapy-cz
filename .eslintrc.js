@@ -2,6 +2,7 @@ const { peerDependencies } = require('./core/package.json');
 
 module.exports = {
 	extends: ['lundegaard', 'prettier'],
+	ignorePatterns: ['core/src/typings/index.d.ts'],
 	rules: {
 		'import/no-unresolved': [
 			'error',
@@ -32,9 +33,16 @@ module.exports = {
 		'react/jsx-filename-extension': [
 			1,
 			{
-				extensions: ['.tsx', '.jsx'],
+				extensions: ['.tsx', '.js', '.jsx'],
 			},
 		],
+	},
+	settings: {
+		'import/resolver': {
+			node: {
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			},
+		},
 	},
 	overrides: [
 		{
@@ -46,13 +54,6 @@ module.exports = {
 				'plugin:@typescript-eslint/recommended',
 				'prettier',
 			],
-			settings: {
-				'import/resolver': {
-					node: {
-						extensions: ['.js', '.jsx', '.ts', '.tsx'],
-					},
-				},
-			},
 		},
 	],
 };
