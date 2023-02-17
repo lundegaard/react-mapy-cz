@@ -4,6 +4,7 @@ import React, {
 	createContext,
 	useEffect,
 	useRef,
+	useState,
 } from 'react';
 
 import { getContextHook } from '../utils/getContextHook';
@@ -20,23 +21,34 @@ export const useMarkerLayer = getContextHook<MarkerContext | undefined>(
 );
 
 const MarkerLayer: FC<PropsWithChildren> = ({ children }) => {
+	const [initialized, setInitialized] = useState(false);
 	const { map, SMap, registerActiveLayer } = useMap();
 	const markerLayerRef = useRef<MarkerContext | undefined>();
 
 	useEffect(() => {
-		const markerLayer = new SMap.Layer.Marker();
-		markerLayerRef.current = markerLayer;
+		if (!initialized) {
+			setInitialized((prevState) => {
+				if (prevState === false) {
+					const markerLayer = new SMap.Layer.Marker();
+					markerLayerRef.current = markerLayer;
+					map?.addLayer(markerLayer);
+					markerLayer.enable();
+					registerActiveLayer(
+						markerLayer,
+						SMAP_LAYER_TYPES.MARKER as LayerType
+					);
+				}
 
-		map?.addLayer(markerLayer);
-		markerLayer.enable();
-		registerActiveLayer(markerLayer, SMAP_LAYER_TYPES.MARKER as LayerType);
+				return true;
+			});
+		}
 
 		return () => {
-			if (markerLayerRef.current) {
+			if (markerLayerRef.current && initialized) {
 				map?.removeLayer(markerLayerRef.current);
 			}
 		};
-	}, [map, SMap, registerActiveLayer]);
+	}, [map, SMap, registerActiveLayer, initialized]);
 
 	return (
 		<MarkerLayerContext.Provider value={markerLayerRef.current}>
