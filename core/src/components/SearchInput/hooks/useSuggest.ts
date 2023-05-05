@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { RefObject, useEffect, useLayoutEffect, useRef } from 'react';
 
 import { useMap } from '../../MapContext';
 
@@ -10,9 +10,9 @@ const defaultConfig = {
 };
 
 const useSuggest = (
-	inputRef,
-	disableSuggest,
-	onSuggestItemSelect,
+	inputRef: RefObject<HTMLInputElement>,
+	disableSuggest: boolean | undefined,
+	onSuggestItemSelect: (data: { longitude: number; latitude: number }) => void,
 	config = defaultConfig
 ) => {
 	const { setMapCenter, SMap } = useMap();
@@ -23,21 +23,27 @@ const useSuggest = (
 	});
 
 	useEffect(() => {
-		let suggest;
+		let suggest: SMap.Suggest;
 
-		if (!disableSuggest) {
+		if (!disableSuggest && inputRef.current) {
 			suggest = new SMap.Suggest(inputRef.current, {
 				provider: new SMap.SuggestProvider({
-					updateParams: (params) => ({ ...params, ...config }),
+					updateParams: (params: { count: number; phrase: string }) => ({
+						...params,
+						...config,
+					}),
 				}),
 			});
-			suggest.addListener('suggest', ({ data }) => {
-				setMapCenter(data.longitude, data.latitude);
+			suggest.addListener(
+				'suggest',
+				({ data }: { data: { longitude: number; latitude: number } }) => {
+					setMapCenter(data.longitude, data.latitude);
 
-				if (onSuggestItemSelectRef.current) {
-					onSuggestItemSelectRef.current(data);
+					if (onSuggestItemSelectRef.current) {
+						onSuggestItemSelectRef.current(data);
+					}
 				}
-			});
+			);
 		}
 
 		return () => {

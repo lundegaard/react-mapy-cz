@@ -22,7 +22,7 @@ const libraryTargetsByTarget = {
 
 module.exports = Object.values(targets).map((target) => ({
 	mode: 'production',
-	entry: path.resolve(packageRoot, 'src/index.js'),
+	entry: path.resolve(packageRoot, 'src/index.ts'),
 	output: {
 		path: path.resolve(packageRoot, outputPathsByTarget[target]),
 		filename: `mapy-cz-react.${target}.js`,
@@ -34,9 +34,11 @@ module.exports = Object.values(targets).map((target) => ({
 			module: true,
 		},
 	},
+	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.jsx'],
+	},
 	externals: {
 		react: 'react',
-		'prop-types': 'prop-types',
 	},
 	experiments: {
 		outputModule: libraryTargetsByTarget[target] === 'module',
@@ -65,6 +67,11 @@ module.exports = Object.values(targets).map((target) => ({
 					},
 					'css-loader',
 				],
+			},
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
 			},
 		],
 	},

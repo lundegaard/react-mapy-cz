@@ -7,12 +7,15 @@
   "main": "lib/mapy-cz-react.commonjs.js",
   "unpkg": "dist/mapy-cz-react.umd.js",
   "module": "es/mapy-cz-react.module.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "types"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "webpack"
   },
   "peerDependencies": {
-    "prop-types": ">=15.7.2",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1"
   },

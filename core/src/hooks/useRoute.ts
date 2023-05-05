@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 
-const useRoute = ({ coords }) => {
-	const [routeInfo, setRouteInfo] = useState({});
+import { Coords } from '../components/types';
 
-	const getRouteInfo = (route) => {
+interface RouteInfoType {
+	geometry: { x: number; y: number }[];
+	altitude: [];
+	itinerary: [];
+}
+
+const useRoute = ({ coords }: { coords: Coords[] }) => {
+	const [routeInfo, setRouteInfo] = useState<RouteInfoType>();
+
+	const getRouteInfo = (route: SMap.Route) => {
 		const results = route.getResults();
 		setRouteInfo(results);
 	};
@@ -18,7 +26,7 @@ const useRoute = ({ coords }) => {
 		}
 	}, [coords]);
 
-	const { altitude, geometry, itinerary } = routeInfo;
+	const { altitude, geometry, itinerary } = routeInfo ?? {};
 
 	return { altitude, geometry, itinerary };
 };

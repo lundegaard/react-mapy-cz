@@ -1,11 +1,19 @@
-import { useEffect } from 'react';
-import { bool } from 'prop-types';
-
-import { coordsShape } from '../utils/shapes';
+import { FC, useEffect } from 'react';
 
 import { useMap } from './MapContext';
+import { Coords } from './types';
 
-const Pointer = ({ redPointer, coords: { lng, lat }, showDistance }) => {
+export interface PointerProps {
+	coords: Coords;
+	redPointer?: boolean;
+	showDistance?: boolean;
+}
+
+const Pointer: FC<PointerProps> = ({
+	redPointer,
+	coords: { lng, lat },
+	showDistance,
+}) => {
 	const { map, SMap } = useMap();
 
 	useEffect(() => {
@@ -16,22 +24,16 @@ const Pointer = ({ redPointer, coords: { lng, lat }, showDistance }) => {
 			snapHUDtoScreen: 1,
 			showDistance,
 		});
-		map.addControl(pointer);
+		map?.addControl(pointer as unknown as SMap.Control);
 
 		pointer.setCoords(SMap.Coords.fromWGS84(lng, lat));
 
 		return () => {
-			map.removeControl(pointer);
+			map?.removeControl(pointer as unknown as SMap.Control);
 		};
 	}, [lat, lng, map, redPointer, showDistance, SMap]);
 
 	return null;
-};
-
-Pointer.propTypes = {
-	coords: coordsShape.isRequired,
-	redPointer: bool,
-	showDistance: bool,
 };
 
 export default Pointer;

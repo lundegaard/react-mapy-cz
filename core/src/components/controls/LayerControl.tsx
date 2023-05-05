@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
-import { number } from 'prop-types';
+import { FC, useEffect } from 'react';
 
 import { useMap } from '../MapContext';
 
-const LayerControl = ({ width = 65, pageSize = 3 }) => {
+export interface LayerControlProps {
+	pageSize?: number;
+	width?: number;
+}
+
+const LayerControl: FC<LayerControlProps> = ({ width = 65, pageSize = 3 }) => {
 	const { map, mapLayers, SMap } = useMap();
 
 	useEffect(() => {
@@ -17,19 +21,14 @@ const LayerControl = ({ width = 65, pageSize = 3 }) => {
 			layerSwitch.addDefaultLayer(layer);
 		});
 
-		map.addControl(layerSwitch, { left: '0px', top: '0px' });
+		map?.addControl(layerSwitch, { left: '0px', top: '0px' });
 
 		return () => {
-			map.removeControl(layerSwitch);
+			map?.removeControl(layerSwitch);
 		};
 	}, [map, mapLayers, pageSize, width, SMap]);
 
 	return null;
-};
-
-LayerControl.propTypes = {
-	pageSize: number,
-	width: number,
 };
 
 export default LayerControl;

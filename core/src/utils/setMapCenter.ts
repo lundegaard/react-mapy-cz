@@ -9,11 +9,14 @@
  * @param {boolean=} animate
  * @returns null
  */
+
+import { SmapType } from '../components/types';
+
 const setMapCenter =
-	(map, SMap) =>
-	(longitude, latitude, zoom = 17, animate = true) => {
+	(map: SMap | undefined, SMap: SmapType) =>
+	(longitude: number, latitude: number, zoom = 17, animate = true) => {
 		const newCoords = SMap.Coords.fromWGS84(longitude, latitude);
-		map.setCenterZoom(newCoords, zoom, animate);
+		map?.setCenterZoom(newCoords, zoom, animate);
 	};
 
 export default setMapCenter;

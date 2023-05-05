@@ -1,12 +1,15 @@
-import { useCallback } from 'react';
+import { FormEvent, useCallback } from 'react';
 
 import { useMap } from '../../MapContext';
 
-const useGeolocation = (searchValue, disableGeolocation) => {
+const useGeolocation = (
+	searchValue: string,
+	disableGeolocation: boolean | undefined
+) => {
 	const { setMapCenter, SMap } = useMap();
 
 	// Function uses all params that can change frequently, memoizing not desired
-	const handleSubmit = (event) => {
+	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
 		if (!disableGeolocation) {
@@ -15,13 +18,12 @@ const useGeolocation = (searchValue, disableGeolocation) => {
 	};
 
 	const geocodeResultsCallback = useCallback(
-		(geocoder) => {
+		(geocoder: SMap.Geocoder) => {
 			const results = geocoder.getResults()[0].results;
 
 			if (!results.length) {
 				// eslint-disable-next-line no-console
 				console.error('Place not found');
-
 				return;
 			}
 

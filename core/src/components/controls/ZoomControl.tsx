@@ -1,11 +1,17 @@
-import { useEffect } from 'react';
-import { arrayOf, bool, number, shape, string } from 'prop-types';
+import { FC, useEffect } from 'react';
 
 import { useMap } from '../MapContext';
 
+export interface ZoomControlProps {
+	labels?: { [key: number]: string };
+	showZoomMenu?: boolean;
+	sliderHeight?: number;
+	stepHeight?: number;
+}
+
 // https://api.mapy.cz/doc/SMap.Control.Zoom.html
-const ZoomControl = ({
-	labels,
+const ZoomControl: FC<ZoomControlProps> = ({
+	labels = {},
 	showZoomMenu,
 	sliderHeight = 16,
 	stepHeight = 9,
@@ -18,23 +24,14 @@ const ZoomControl = ({
 			sliderHeight,
 			step: stepHeight,
 		});
-		map.addControl(zoomControl);
+		map?.addControl(zoomControl);
 
 		return () => {
-			map.removeControl(zoomControl);
+			map?.removeControl(zoomControl);
 		};
 	}, [labels, map, showZoomMenu, sliderHeight, SMap, stepHeight]);
 
 	return null;
-};
-
-ZoomControl.propTypes = {
-	// Object with Zoom number as key and string value as label
-	labels: shape({ [number]: string }),
-	showZoomMenu: bool,
-	sliderHeight: number,
-	step: number,
-	titles: arrayOf(string),
 };
 
 export default ZoomControl;

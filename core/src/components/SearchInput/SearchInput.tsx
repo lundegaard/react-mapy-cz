@@ -1,10 +1,27 @@
-import { bool, elementType, func, oneOfType, string } from 'prop-types';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+	ChangeEvent,
+	ComponentPropsWithRef,
+	FC,
+	useEffect,
+	useRef,
+	useState,
+} from 'react';
 
 import useGeolocation from './hooks/useGeolocation';
 import useSuggest from './hooks/useSuggest';
 
-const SearchInput = ({
+export interface SearchInputProps {
+	className?: string;
+	disableGeolocation?: boolean;
+	disableSuggest?: boolean;
+	inputComp?: FC<ComponentPropsWithRef<'input'>>;
+	inputValue?: string;
+	onSuggestItemSelect: (data: { longitude: number; latitude: number }) => void;
+	onValueChange?: (value: string) => void;
+	placeholder?: string;
+}
+
+const SearchInput: FC<SearchInputProps> = ({
 	className = '',
 	disableGeolocation,
 	disableSuggest,
@@ -12,6 +29,7 @@ const SearchInput = ({
 	inputValue,
 	onSuggestItemSelect,
 	onValueChange,
+	placeholder,
 }) => {
 	const [searchValue, setSearchValue] = useState('');
 
@@ -21,12 +39,12 @@ const SearchInput = ({
 		}
 	}, [inputValue]);
 
-	const inputRef = useRef();
+	const inputRef = useRef<HTMLInputElement>(null);
 
 	useSuggest(inputRef, disableSuggest, onSuggestItemSelect);
 	const handleSubmit = useGeolocation(searchValue, disableGeolocation);
 
-	const handleChange = (event) => {
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		if (onValueChange) {
 			onValueChange(event.target.value);
 		}
@@ -40,20 +58,11 @@ const SearchInput = ({
 				value={searchValue}
 				onChange={handleChange}
 				className={className}
+				placeholder={placeholder}
 			/>
 			{!disableGeolocation && <input type="submit" />}
 		</form>
 	);
-};
-
-SearchInput.propTypes = {
-	className: string,
-	disableGeolocation: bool,
-	disableSuggest: bool,
-	inputComp: oneOfType([string, elementType]),
-	inputValue: string,
-	onSuggestItemSelect: func,
-	onValueChange: func,
 };
 
 export default SearchInput;

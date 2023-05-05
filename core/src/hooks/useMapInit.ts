@@ -1,7 +1,17 @@
 import { useEffect, useState } from 'react';
 
-const useMapInit = (center, id, mapLayers, maxZoom, minZoom, SMap, zoom) => {
-	const [map, setMap] = useState();
+import { Coords, SmapType } from '../components/types';
+
+const useMapInit = (
+	center: Coords,
+	id: string,
+	mapLayers: string[] | number[],
+	maxZoom: number,
+	minZoom: number,
+	SMap: SmapType,
+	zoom: number
+) => {
+	const [map, setMap] = useState<SMap>();
 
 	useEffect(() => {
 		if (!map && SMap) {

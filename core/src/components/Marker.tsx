@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { markerShape } from '../utils/shapes';
 import createMarker from '../utils/createMarker';
 
 import { useMarkerLayer } from './MarkerLayer';
+import { MarkerType } from './types';
 
-const Marker = (props) => {
+const Marker = (props: MarkerType) => {
 	const markerLayer = useMarkerLayer();
 
 	useEffect(() => {
@@ -20,7 +20,5 @@ const Marker = (props) => {
 
 	return null;
 };
-
-Marker.propTypes = markerShape;
 
 export default Marker;

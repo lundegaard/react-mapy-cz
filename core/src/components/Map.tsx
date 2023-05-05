@@ -1,11 +1,16 @@
-import React, { memo } from 'react';
-import { node, string } from 'prop-types';
+import React, { FC, ReactElement, memo } from 'react';
 
 import styles from '../css/base.module.css';
 
 import { useMap } from './MapContext';
 
-const Map = ({ children, width = '100%', height = 'auto' }) => {
+export interface MapProps {
+	children?: ReactElement;
+	height?: string;
+	width?: string;
+}
+
+const Map: FC<MapProps> = ({ children, width = '100%', height = 'auto' }) => {
 	const { map, id } = useMap();
 
 	return (
@@ -21,12 +26,6 @@ const Map = ({ children, width = '100%', height = 'auto' }) => {
 			{map && children}
 		</div>
 	);
-};
-
-Map.propTypes = {
-	children: node,
-	height: string,
-	width: string,
 };
 
 export default memo(Map);

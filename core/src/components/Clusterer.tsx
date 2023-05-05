@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import { number } from 'prop-types';
+import { FC, useEffect, useRef } from 'react';
 
 import { useMap } from './MapContext';
 import { useMarkerLayer } from './MarkerLayer';
@@ -12,23 +11,26 @@ import { useMarkerLayer } from './MarkerLayer';
  *
  * @returns null
  */
-const Clusterer = ({ maxDistance = 100 }) => {
+
+export interface ClustererProps {
+	maxDistance?: number;
+}
+
+const Clusterer: FC<ClustererProps> = ({ maxDistance = 100 }) => {
 	const { map, SMap } = useMap();
 	const markerLayer = useMarkerLayer();
-	const clustererRef = useRef();
+	const clustererRef = useRef<SMap.Marker.Clusterer>();
 
 	useEffect(() => {
-		clustererRef.current = new SMap.Marker.Clusterer(map, maxDistance);
+		if (map) {
+			clustererRef.current = new SMap.Marker.Clusterer(map, maxDistance);
 
-		// NOTE: Removing clusterer not applicable in API
-		markerLayer.setClusterer(clustererRef.current);
+			// NOTE: Removing clusterer not applicable in API
+			markerLayer.setClusterer(clustererRef.current);
+		}
 	}, [map, markerLayer, maxDistance, SMap]);
 
 	return null;
-};
-
-Clusterer.propTypes = {
-	maxDistance: number,
 };
 
 export default Clusterer;

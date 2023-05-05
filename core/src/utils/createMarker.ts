@@ -1,3 +1,5 @@
+import { MarkerType } from '../components/types';
+
 const createMarker = ({
 	cardBodyText,
 	cardHeaderText,
@@ -6,7 +8,7 @@ const createMarker = ({
 	imgSrc,
 	tooltip,
 	...props
-}) => {
+}: MarkerType) => {
 	const options = {
 		...(imgSrc ? { url: imgSrc } : undefined),
 		...(tooltip ? { title: tooltip } : undefined),
@@ -26,8 +28,8 @@ const createMarker = ({
 	if (enableCard) {
 		const card = new window.SMap.Card();
 
-		card.getHeader().innerHTML = cardHeaderText;
-		card.getBody().innerHTML = cardBodyText;
+		card.getHeader().innerHTML = cardHeaderText ?? '';
+		card.getBody().innerHTML = cardBodyText ?? '';
 		marker.decorate(window.SMap.Marker.Feature.Card, card);
 	}
 

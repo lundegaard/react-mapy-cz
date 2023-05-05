@@ -1,19 +1,31 @@
-import React, { createContext, useMemo } from 'react';
-import { arrayOf, node, number, oneOf, shape, string } from 'prop-types';
+import React, { FC, ReactElement, createContext, useMemo } from 'react';
 
 import { BASE_LAYERS } from '../utils/constants';
-import { coordsShape } from '../utils/shapes';
 import mapScriptLoader from '../hoc/mapScriptLoader';
 import setMapCenter from '../utils/setMapCenter';
 import { getContextHook } from '../utils/getContextHook';
 import useLayerManagement from '../hooks/useLayerManagement';
 import useMapInit from '../hooks/useMapInit';
+import { ContextType, Coords } from '../components/types';
 
-const MapContext = createContext();
+const MapContext = createContext<ContextType | undefined>(undefined);
 
-export const useMap = getContextHook(MapContext, 'MapProvider');
+export const useMap = getContextHook<ContextType | undefined>(
+	MapContext,
+	'MapProvider'
+);
 
-const MapProvider = ({
+export interface MapProviderProps {
+	center: Coords;
+	children: ReactElement;
+	id?: string;
+	mapLayers?: string[];
+	maxZoom?: number;
+	minZoom?: number;
+	zoom?: number;
+}
+
+const MapProvider: FC<MapProviderProps> = ({
 	center,
 	children,
 	id = 'mapy-cz-map',
@@ -40,16 +52,6 @@ const MapProvider = ({
 			{children}
 		</MapContext.Provider>
 	);
-};
-
-MapProvider.propTypes = {
-	center: shape(coordsShape).isRequired,
-	children: node,
-	id: string,
-	mapLayers: arrayOf([oneOf(Object.keys(BASE_LAYERS))]),
-	maxZoom: number,
-	minZoom: number,
-	zoom: number,
 };
 
 export default mapScriptLoader(MapProvider);

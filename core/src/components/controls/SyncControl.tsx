@@ -1,9 +1,16 @@
-import { number } from 'prop-types';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 import { useMap } from '../MapContext';
 
-const SyncControl = ({ bottomSpace = 0, resizeTimeout = 100 }) => {
+export interface SyncControlProps {
+	bottomSpace?: number;
+	resizeTimeout?: number;
+}
+
+const SyncControl: FC<SyncControlProps> = ({
+	bottomSpace = 0,
+	resizeTimeout = 100,
+}) => {
 	const { map, SMap } = useMap();
 
 	useEffect(() => {
@@ -11,19 +18,14 @@ const SyncControl = ({ bottomSpace = 0, resizeTimeout = 100 }) => {
 			bottomSpace,
 			resizeTimeout,
 		});
-		map.addControl(syncControl);
+		map?.addControl(syncControl);
 
 		return () => {
-			map.removeControl(syncControl);
+			map?.removeControl(syncControl);
 		};
 	}, [bottomSpace, map, resizeTimeout, SMap]);
 
 	return null;
-};
-
-SyncControl.propTypes = {
-	bottomSpace: number,
-	resizeTimeout: number,
 };
 
 export default SyncControl;

@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import * as mapLib from '../../../../core/src/index';
+import * as mapLib from '../../../../core/src';
 
 // Add react-live imports you need here
 const ReactLiveScope = {
