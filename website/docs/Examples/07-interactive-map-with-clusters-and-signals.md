@@ -15,22 +15,24 @@ Interactive map with controls, marker clustering and signals. You can listen to 
   <section className={styles.sMap}>
 		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
 			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<Signals onMarkerClick={onMarkerClick} onClusterClick={onClusterClick}/>
-				<MouseControl zoom pan wheel />
-				<MarkerLayer >
-					<Clusterer />
-    			<MultipleMarkers markersData={generatePoints(2000, true).map((point) => ({
-    				coords: point.gps,
-    				tooltip: point.title,
-    				...point,
-    			}))}
-    			/>
-    		</MarkerLayer>
-    		</Map>
-    	</MapProvider>
-    </section>
+				<>
+					<ZoomControl />
+					<KeyboardControl />
+					<Signals onMarkerClick={onMarkerClick} onClusterClick={onClusterClick}/>
+					<MouseControl zoom pan wheel />
+					<MarkerLayer >
+						<Clusterer />
+						<MultipleMarkers markersData={generatePoints(2000, true).map((point) => ({
+							coords: point.gps,
+							tooltip: point.title,
+							...point,
+						}))}
+						/>
+					</MarkerLayer>
+				</>
+    	</Map>
+    </MapProvider>
+  </section>
 </div>
 
 <br />
@@ -39,7 +41,8 @@ Interactive map with controls, marker clustering and signals. You can listen to 
 
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
-		<Map>
+	<Map>
+		<>
 			<ZoomControl />
 			<KeyboardControl />
 			<Signals onMarkerClick={onMarkerClick} onClusterClick={onClusterClick}/>
@@ -53,6 +56,7 @@ Interactive map with controls, marker clustering and signals. You can listen to 
 				}))}
 				/>
 			</MarkerLayer>
-			</Map>
-		</MapProvider>
+		</>
+	</Map>
+</MapProvider>
 ```

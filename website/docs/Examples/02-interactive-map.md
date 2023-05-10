@@ -14,9 +14,11 @@ Interactive map with zoom, keyboard and mouse control. Move the map by dragging 
   <section className={styles.sMap}>
 		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
 			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
+				<>
+					<ZoomControl />
+					<KeyboardControl />
+					<MouseControl zoom pan wheel />
+				</>
 			</Map>
 		</MapProvider>
 	</section>
@@ -29,9 +31,11 @@ Interactive map with zoom, keyboard and mouse control. Move the map by dragging 
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
 	<Map>
-		<ZoomControl />
-		<KeyboardControl />
-		<MouseControl zoom pan wheel />
+		<>
+			<ZoomControl />
+			<KeyboardControl />
+			<MouseControl zoom pan wheel />
+		</>
 	</Map>
 </MapProvider>
 ```

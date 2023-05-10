@@ -16,7 +16,7 @@ export interface SearchInputProps {
 	disableSuggest?: boolean;
 	inputComp?: FC<ComponentPropsWithRef<'input'>>;
 	inputValue?: string;
-	onSuggestItemSelect: (data: { longitude: number; latitude: number }) => void;
+	onSuggestItemSelect?: (data: { longitude: number; latitude: number }) => void;
 	onValueChange?: (value: string) => void;
 	placeholder?: string;
 }

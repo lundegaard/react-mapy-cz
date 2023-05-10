@@ -12,7 +12,7 @@ const defaultConfig = {
 const useSuggest = (
 	inputRef: RefObject<HTMLInputElement>,
 	disableSuggest: boolean | undefined,
-	onSuggestItemSelect: (data: { longitude: number; latitude: number }) => void,
+	onSuggestItemSelect?: (data: { longitude: number; latitude: number }) => void,
 	config = defaultConfig
 ) => {
 	const { setMapCenter, SMap } = useMap();
