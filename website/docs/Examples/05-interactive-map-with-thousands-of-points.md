@@ -15,17 +15,19 @@ Interactive map with controls and 10 000 markers implemented with MultipleMarker
   <section className={styles.sMap}>
 		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
 			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-				<MarkerLayer>
-					<MultipleMarkers markersData={generatePoints(10000, true).map((point) => ({
-							coords: point.gps,
-							tooltip: point.name,
-							...point,
-						}))}
-					/>
-				</MarkerLayer>
+				<>
+					<ZoomControl />
+					<KeyboardControl />
+					<MouseControl zoom pan wheel />
+					<MarkerLayer>
+						<MultipleMarkers markersData={generatePoints(10000, true).map((point) => ({
+								coords: point.gps,
+								tooltip: point.name,
+								...point,
+							}))}
+						/>
+					</MarkerLayer>
+				</>
 			</Map>
 		</MapProvider>
 	</section>
@@ -38,17 +40,19 @@ Interactive map with controls and 10 000 markers implemented with MultipleMarker
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}>
 	<Map>
-		<ZoomControl />
-		<KeyboardControl />
-		<MouseControl zoom pan wheel />
-		<MarkerLayer>
-			<MultipleMarkers markersData={generatePoints(10000, true).map((point) => ({
-					coords: point.gps,
-					tooltip: point.name,
-					...point,
-				}))}
-			/>
-		</MarkerLayer>
+		<>
+			<ZoomControl />
+			<KeyboardControl />
+			<MouseControl zoom pan wheel />
+			<MarkerLayer>
+				<MultipleMarkers markersData={generatePoints(10000, true).map((point) => ({
+						coords: point.gps,
+						tooltip: point.name,
+						...point,
+					}))}
+				/>
+			</MarkerLayer>
+		</>
 	</Map>
 </MapProvider>
 ```

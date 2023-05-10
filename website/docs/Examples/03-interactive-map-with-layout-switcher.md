@@ -13,10 +13,12 @@ Interactive map with controls and layout switcher.
   <section className={styles.sMap}>
 		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	mapLayers={[BASE_LAYERS.BASE_NEW, BASE_LAYERS.TURIST, BASE_LAYERS.OPHOTO, BASE_LAYERS.HISTORIC, BASE_LAYERS.TURIST_WINTER, BASE_LAYERS.TRAIL]} zoom={14}>
 			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-				<LayerControl pageSize={5} />
+				<>
+					<ZoomControl />
+					<KeyboardControl />
+					<MouseControl zoom pan wheel />
+					<LayerControl pageSize={5} />
+				</>
 			</Map>
 		</MapProvider>
 	</section>
@@ -29,10 +31,12 @@ Interactive map with controls and layout switcher.
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	mapLayers={[BASE_LAYERS.BASE_NEW, BASE_LAYERS.TURIST, BASE_LAYERS.OPHOTO, BASE_LAYERS.HISTORIC, BASE_LAYERS.TURIST_WINTER]} zoom={14}>
 	<Map>
-		<ZoomControl />
-		<KeyboardControl />
-		<MouseControl zoom pan wheel />
-		<LayerControl pageSize={5} />
+		<>
+			<ZoomControl />
+			<KeyboardControl />
+			<MouseControl zoom pan wheel />
+			<LayerControl pageSize={5} />
+		</>
 	</Map>
 </MapProvider>
 ```

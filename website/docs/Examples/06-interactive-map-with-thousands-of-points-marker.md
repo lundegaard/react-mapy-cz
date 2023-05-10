@@ -18,12 +18,14 @@ Implementation with single Marker component using loop causes extremely slow map
   <section className={styles.sMap}>
 		<MapProvider center={{lng:  14.4608576, lat: 50.0963478}} >
 			<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-				<MarkerLayer>
-				{generatePoints(2000).map((point, index) => <Marker key={index} coords={point} />)}
-				</MarkerLayer>
+				<>
+					<ZoomControl />
+					<KeyboardControl />
+					<MouseControl zoom pan wheel />
+					<MarkerLayer>
+					{generatePoints(2000).map((point, index) => <Marker key={index} coords={point} />)}
+					</MarkerLayer>
+				</>
     	</Map>
     </MapProvider>
 
@@ -37,10 +39,14 @@ Implementation with single Marker component using loop causes extremely slow map
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}} >
 	<Map>
-		<ZoomControl />
-		<KeyboardControl />
-		<MouseControl zoom pan wheel />
-		{generatePoints(2000).map((point, index) => <MarkerLayer key={index} ><Marker coords={point} />	</MarkerLayer>)}
+		<>
+			<ZoomControl />
+			<KeyboardControl />
+			<MouseControl zoom pan wheel />
+			<MarkerLayer>
+			{generatePoints(2000).map((point, index) => <Marker key={index} coords={point} />)}
+			</MarkerLayer>
+		</>
 	</Map>
 </MapProvider>
 ```

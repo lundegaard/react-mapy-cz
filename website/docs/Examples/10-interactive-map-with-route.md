@@ -13,12 +13,14 @@ Interactive map with controls and route.
 <section className={styles.sMap}>
 	<MapProvider center={{lng:  14.4608576, lat: 50.0963478}} zoom={7}>
 		<Map>
-			<RouteLayer>
-				<RouteGeometry coords={[{lng:  14.434, lat: 50.084}, {lng:  16.6, lat: 49.195}]} />
-			</RouteLayer>
-			<ZoomControl />
-			<KeyboardControl />
-			<MouseControl zoom pan wheel />
+			<>
+				<RouteLayer>
+					<RouteGeometry coords={[{lng:  14.434, lat: 50.084}, {lng:  16.6, lat: 49.195}]} />
+				</RouteLayer>
+				<ZoomControl />
+				<KeyboardControl />
+				<MouseControl zoom pan wheel />
+			</>
 		</Map>
 	</MapProvider>
 </section>
@@ -30,12 +32,14 @@ Interactive map with controls and route.
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}} zoom={7}>
 	<Map>
-		<RouteLayer>
-			<RouteGeometry coords={[{lng:  14.434, lat: 50.084}, {lng:  16.6, lat: 49.195}]}/>
-		</RouteLayer>
-		<ZoomControl />
-		<KeyboardControl />
-		<MouseControl zoom pan wheel />
+		<>
+			<RouteLayer>
+				<RouteGeometry coords={[{lng:  14.434, lat: 50.084}, {lng:  16.6, lat: 49.195}]}/>
+			</RouteLayer>
+			<ZoomControl />
+			<KeyboardControl />
+			<MouseControl zoom pan wheel />
+		</>
 	</Map>
 </MapProvider>
 ```

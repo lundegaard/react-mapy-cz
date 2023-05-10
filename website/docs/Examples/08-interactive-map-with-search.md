@@ -13,14 +13,18 @@ Interactive map with controls and search input. The search input shows suggestio
 <div>
   <section className={styles.sMap}>
     <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	>
-			<SearchInput placeholder="Search" disableGeolocation />
-    	<Map>
-				<ZoomControl />
-				<KeyboardControl />
-				<MouseControl zoom pan wheel />
-    	</Map>
+			<>
+				<SearchInput placeholder="Search" disableGeolocation />
+				<Map>
+					<>
+						<ZoomControl />
+						<KeyboardControl />
+						<MouseControl zoom pan wheel />
+					</>
+				</Map>
+			</>
     </MapProvider>
-	</section>
+  </section>
 </div>
 
 <br/>
@@ -29,11 +33,14 @@ Interactive map with controls and search input. The search input shows suggestio
 
 ```
 <MapProvider center={{lng:  14.4608576, lat: 50.0963478}}	>
-	<SearchInput placeholder="Search" disableGeolocation />
-	<Map>
-		<ZoomControl />
-		<KeyboardControl />
-		<MouseControl zoom pan wheel />
-	</Map>
+	<>
+		<SearchInput placeholder="Search" disableGeolocation />
+		<Map>
+			<>
+				<ZoomControl />
+				<KeyboardControl />
+				<MouseControl zoom pan wheel />
+			</>
+		</Map>
 </MapProvider>
 ```

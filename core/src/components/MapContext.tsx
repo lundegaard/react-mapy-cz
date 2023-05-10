@@ -19,7 +19,7 @@ export interface MapProviderProps {
 	center: Coords;
 	children: ReactElement;
 	id?: string;
-	mapLayers?: string[];
+	mapLayers?: string[] | number[];
 	maxZoom?: number;
 	minZoom?: number;
 	zoom?: number;
