@@ -1,19 +1,14 @@
 {
-  "version": "0.0.3",
+  "version": "0.1.0",
   "command": {
     "init": {
       "exact": true
     },
     "publish": {
-      "ignoreChanges": [
-        "*.md",
-        "website/**"
-      ]
+      "ignoreChanges": ["*.md", "website/**"]
     }
   },
-  "packages": [
-    "core"
-  ],
+  "packages": ["core"],
   "npmClient": "yarn",
   "useWorkspaces": true
 }
