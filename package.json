@@ -1,6 +1,5 @@
 {
   "name": "@mapy-cz-react/monorepo",
-  "version": "0.0.4",
   "private": true,
   "description": "Mapy.cz API React wrapper",
   "contributors": [
