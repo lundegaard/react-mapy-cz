@@ -1,5 +1,4 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
-import invariant from 'invariant';
 
 import {
 	MAPYCZ_LOADER_SCRIPT_ID,
@@ -34,8 +33,6 @@ const mapScriptLoader =
 
 		// Test if Loader indeed loaded everything and we can render map
 		const onLoadCallback = useCallback((retryNo = 1) => {
-			invariant(window, 'This library is not designed to be run on the server');
-
 			if (window?.SMap?.Suggest) {
 				setScriptLoaded(true);
 			} else if (retryNo <= MAX_RETRIES) {
@@ -44,6 +41,10 @@ const mapScriptLoader =
 		}, []);
 
 		useEffect(() => {
+			if (typeof document === 'undefined') {
+				return;
+			}
+
 			// When script is already loaded, move to onLoadCallback
 			if (document.getElementById(MAPYCZ_LOADER_SCRIPT_ID)) {
 				onLoadCallback();
