@@ -47,3 +47,9 @@ export interface ContextType {
 export type MarkerContext = SMap.Layer.Marker;
 
 export type LayerContext = SMap.Layer;
+
+export type SuggestConfig = {
+	bounds?: string;
+	enableCategories?: 0 | 1;
+	lang?: string;
+};

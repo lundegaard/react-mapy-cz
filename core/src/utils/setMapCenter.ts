@@ -14,7 +14,7 @@ import { SmapType } from '../components/types';
 
 const setMapCenter =
 	(map: SMap | undefined, SMap: SmapType) =>
-	(longitude: number, latitude: number, zoom = 17, animate = true) => {
+	(longitude: number, latitude: number, zoom = 17, animate = false) => {
 		const newCoords = SMap.Coords.fromWGS84(longitude, latitude);
 		map?.setCenterZoom(newCoords, zoom, animate);
 	};

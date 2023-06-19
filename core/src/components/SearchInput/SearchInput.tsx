@@ -7,6 +7,8 @@ import React, {
 	useState,
 } from 'react';
 
+import { SuggestConfig } from '../types';
+
 import useGeolocation from './hooks/useGeolocation';
 import useSuggest from './hooks/useSuggest';
 
@@ -19,6 +21,7 @@ export interface SearchInputProps {
 	onSuggestItemSelect?: (data: { longitude: number; latitude: number }) => void;
 	onValueChange?: (value: string) => void;
 	placeholder?: string;
+	suggestConfig?: SuggestConfig;
 }
 
 const SearchInput: FC<SearchInputProps> = ({
@@ -30,6 +33,7 @@ const SearchInput: FC<SearchInputProps> = ({
 	onSuggestItemSelect,
 	onValueChange,
 	placeholder,
+	suggestConfig,
 }) => {
 	const [searchValue, setSearchValue] = useState('');
 
@@ -41,7 +45,7 @@ const SearchInput: FC<SearchInputProps> = ({
 
 	const inputRef = useRef<HTMLInputElement>(null);
 
-	useSuggest(inputRef, disableSuggest, onSuggestItemSelect);
+	useSuggest(inputRef, disableSuggest, onSuggestItemSelect, suggestConfig);
 	const handleSubmit = useGeolocation(searchValue, disableGeolocation);
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
